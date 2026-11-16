@@ -8,64 +8,63 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
+  
+  <!-- LE MENU DE NAVIGATION -->
+  <header class="top">
+    <a href="index.html"><img src="logo.svg" alt="Logo R"></a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="pierres-pendules.html">Pierres &amp; Pendules</a>
+      <a href="familles-ame.html">Familles d’Âme</a>
+      <a href="dons.html">Les Dons</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="temoignages.html">Témoignages</a>
+      <a href="contact.html">Contact</a>
+      <a href="energeticien.html">Énergéticien</a>
+      <a href="magnetiseur.html">Magnétiseur</a>
+      <a href="chakras.html">Chakras</a>
+      <a href="chaman.html">Chaman</a>
+      <a href="liberation.html">Libération des blocages</a>
+    </nav>
+  </header>
+
+  <!-- LE CONTENU DE LA PAGE -->
+  <div class="wrap">
     <h1>Contact</h1>
 
-    <article>
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="5" width="18" height="14" rx="3"/>
-          <path d="M3 7l9 6 9-6"/>
-        </svg>
-      </div>
+    <div class="card">
+      <h2>Écrivez-moi</h2>
+      <p>
+        Vous pouvez utiliser le formulaire ci-dessous pour poser une question,
+        demander des informations ou proposer un premier échange.
+      </p>
+      <p class="notice">
+        Vos coordonnées ne seront utilisées que pour vous répondre.
+      </p>
+      
+      <form action="#" method="POST">
+        <label>Votre prénom</label><br>
+        <input type="text" name="prenom" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #dde8f0;"><br>
 
-      <div>
-        <h2>Écrivez-moi</h2>
-        <p>
-          Vous pouvez utiliser le formulaire ci-dessous pour poser une question,
-          demander des informations ou proposer un premier échange.
-        </p>
-        <p class="notice">
-          Vos coordonnées ne seront utilisées que pour vous répondre.
-        </p>
-      </div>
-    </article>
+        <label>Votre adresse e-mail</label><br>
+        <input type="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #dde8f0;"><br>
 
-    <form action="#" method="POST">
-      <label>
-        Votre prénom
-        <input type="text" name="prenom" required>
-      </label>
+        <label>Votre message</label><br>
+        <textarea name="message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #dde8f0;"></textarea><br>
 
-      <label>
-        Votre adresse e-mail
-        <input type="email" name="email" required>
-      </label>
+        <button type="submit" class="btn" style="border: none; cursor: pointer;">Envoyer le message</button>
+      </form>
+    </div>
 
-      <label>
-        Votre message
-        <textarea name="message" rows="6" required></textarea>
-      </label>
+    <div class="card">
+      <h2>Une réponse personnalisée</h2>
+      <p>
+        Je vous répondrai dans les meilleurs délais. Si votre situation nécessite une aide
+        urgente ou un accompagnement médical, contactez les services appropriés.
+      </p>
+      <a class="btn" href="a-propos.html">En savoir plus</a>
+    </div>
+  </div>
 
-      <button type="submit">Envoyer le message</button>
-    </form>
-
-    <article>
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/>
-        </svg>
-      </div>
-
-      <div>
-        <h2>Une réponse personnalisée</h2>
-        <p>
-          Je vous répondrai dans les meilleurs délais. Si votre situation nécessite une aide
-          urgente ou un accompagnement médical, contactez les services appropriés.
-        </p>
-        <a href="a-propos.html"><button>En savoir plus</button></a>
-      </div>
-    </article>
-  </main>
 </body>
 </html>
