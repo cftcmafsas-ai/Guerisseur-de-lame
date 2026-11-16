@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vente de Pierres et Pendules · Guérisseur de l’Âme</title>
+  <meta name="description" content="Découvrez et commandez vos pendules et pierres brutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Petit design spécial pour la boutique -->
+  <style>
+    .shop-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+    .shop-photo { text-align: center; margin: 0; }
+    .shop-photo img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .shop-photo figcaption { margin-top: 8px; font-weight: 600; color: var(--tx); }
+    .shop-price { font-weight: 700; color: var(--dk); margin-bottom: 10px; font-size: 1.1rem; }
+    .shop-order label { display: block; margin: 15px 0 5px; font-weight: 600; }
+    .shop-order select, .shop-order input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #dde8f0; margin-bottom: 15px; font: inherit; }
+  </style>
+
+</head>
+<body>
+
+<header class="top">
+  <a href="/index.html"><img src="/logo.svg" alt="Logo R"></a>
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/pierres-pendules.html">Pierres &amp; Pendules</a>
+    <a href="/vente.html">Vente</a>
+    <a href="/familles-ame.html">Familles d’Âme</a>
+    <a href="/dons.html">Les Dons</a>
+    <a href="/a-propos.html">À propos</a>
+    <a href="/temoignages.html">Témoignages</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/energeticien.html">Énergéticien</a>
+    <a href="/magnetiseur.html">Magnétiseur</a>
+    <a href="/chakras.html">Chakras</a>
+    <a href="/chaman.html">Chaman</a>
+    <a href="/liberation.html">Libération des blocages</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <h1>Pendules et pierres</h1>
+  <p class="lead">Choisissez votre pierre, échangeons sur votre commande.</p>
+
+  <div class="band">
+    <h2>Des articles à découvrir</h2>
+    <p>Découvrez les pendules et les pierres proposés. Contactez-moi pour confirmer votre choix et la disponibilité.</p>
+  </div>
+
+  <div class="shop-gallery">
+    <figure class="shop-photo">
+      <a href="https://static.wixstatic.com/media/a03fcf_719c0ebadac2405395ddfe23b74cc607~mv2.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="https://static.wixstatic.com/media/a03fcf_719c0ebadac2405395ddfe23b74cc607~mv2.jpg" alt="Pendule en quartz Aura" loading="lazy">
+      </a>
+      <figcaption>Pendule en quartz Aura</figcaption>
+    </figure>
+
+    <figure class="shop-photo">
+      <a href="https://static.wixstatic.com/media/a03fcf_a226c55bd15643dca5c8d78761d080a4~mv2.jpeg" target="_blank" rel="noopener noreferrer">
+        <img src="https://static.wixstatic.com/media/a03fcf_a226c55bd15643dca5c8d78761d080a4~mv2.jpeg" alt="Émeraude brute" loading="lazy">
+      </a>
+      <figcaption>Émeraude brute</figcaption>
+    </figure>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Pendules</h2>
+      <p class="shop-price">20 € l’unité</p>
+      <p>Indiquez la pierre ou le modèle que vous souhaitez. Le choix et la disponibilité seront confirmés lors de notre échange.</p>
+    </article>
+
+    <article class="card">
+      <h2>Pierres brutes</h2>
+      <p class="shop-price">Prix sur demande</p>
+      <p>Précisez la pierre souhaitée pour connaître les possibilités et le tarif.</p>
+    </article>
+
+    <article class="card">
+      <h2>Bâton de sélénite</h2>
+      <p class="shop-price">Prix sur demande</p>
+      <p>Contactez-moi pour connaître le tarif et la disponibilité.</p>
+    </article>
+  </div>
+
+  <section class="card shop-order" aria-labelledby="order-title">
+    <h2 id="order-title">Préparer ma demande</h2>
+
+    <label for="shop-kind">Article souhaité</label>
+    <select id="shop-kind">
+      <option>Pendule — 20 € l’unité</option>
+      <option>Pierre brute — prix sur demande</option>
+      <option>Bâton de sélénite — prix sur demande</option>
+    </select>
+
+    <label for="shop-choice">Votre choix de pierre ou de modèle</label>
+    <input id="shop-choice" type="text" placeholder="Nom de la pierre ou repère de la photo">
+
+    <p><a class="btn" id="shop-whatsapp" href="https://wa.me/33769737356" target="_blank" rel="noopener noreferrer">Demander à commander sur WhatsApp</a></p>
+
+    <p>Le bouton ouvre un message préparé : aucun envoi automatique et aucun paiement sur ce site. Prix des autres articles, disponibilité et éventuels frais de livraison à confirmer.</p>
+
+    <p><a href="mailto:rodolphetorres@outlook.fr">Me contacter par e-mail</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Guérisseur de l’Âme · <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a> · <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></p>
+</footer>
+
+</body>
+</html>
