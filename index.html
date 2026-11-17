@@ -1,34 +1,104 @@
-<!DOCTYPE html><html lang="fr"><head><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="connect-src &#39;none&#39;; form-action &#39;none&#39;; frame-src &#39;none&#39;"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rodolphe — Accompagnement spirituel et bien-être</title><meta name="description" content="Rodolphe vous présente sa démarche d’écoute, de bien-être et de spiritualité. Découvrez ses valeurs et les moyens de le contacter."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<style></style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rodolphe — Accompagnement spirituel et bien-être</title>
+  <meta name="description" content="Rodolphe vous présente sa démarche d’écoute, de bien-être et de spiritualité. Découvrez ses valeurs et les moyens de le contacter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
-<style></style>
+  <style>
+    .duo{max-width:760px;margin:26px auto;padding:0 20px}
+    .duo-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);border-radius:24px;box-shadow:0 14px 34px rgba(43,65,95,.10);padding:26px;text-align:center}
+    .duo-card h2{margin:0 0 8px;font:600 24px/1.2 Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
+    .duo-card p{margin:0 0 18px;color:var(--mu,#7a8c9a);font-size:16px;line-height:1.6}
+    .duo-list{display:flex;flex-direction:column;gap:18px}
+    .duo-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 0 18px;border-bottom:1px solid var(--bd,#dde8f0)}
+    .duo-item:last-child{border-bottom:0;padding-bottom:0}
+    .duo-item b{font:600 18px Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
+    .duo-item span{font-size:14px;color:var(--mu,#7a8c9a);max-width:520px}
+    .duo-btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--p3,#b9d6ee);color:var(--dk,#3a4955);font:600 15px Inter,system-ui,sans-serif;text-decoration:none}
+    .duo-btn:hover{filter:brightness(.96)}
+    @media(max-width:640px){.duo{padding:0 14px}.duo-card{padding:20px}}
+  </style>
+</head>
+<body>
 
-<style>
-.duo{max-width:760px;margin:26px auto;padding:0 20px}
-.duo-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);border-radius:24px;box-shadow:0 14px 34px rgba(43,65,95,.10);padding:26px;text-align:center}
-.duo-card h2{margin:0 0 8px;font:600 24px/1.2 Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
-.duo-card p{margin:0 0 18px;color:var(--mu,#7a8c9a);font-size:16px;line-height:1.6}
-.duo-list{display:flex;flex-direction:column;gap:18px}
-.duo-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 0 18px;border-bottom:1px solid var(--bd,#dde8f0)}
-.duo-item:last-child{border-bottom:0;padding-bottom:0}
-.duo-item b{font:600 18px Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
-.duo-item span{font-size:14px;color:var(--mu,#7a8c9a);max-width:520px}
-.duo-btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--p3,#b9d6ee);color:var(--dk,#3a4955);font:600 15px Inter,system-ui,sans-serif;text-decoration:none}
-.duo-btn:hover{filter:brightness(.96)}
-@media(max-width:640px){.duo{padding:0 14px}.duo-card{padding:20px}}
-</style>
-</head><body>
-<header class="top"><a href="/index.html"><img src="/logo.svg" alt="Logo R"></a><nav><a href="/index.html">Accueil</a><a href="/pierres-pendules.html">Pierres &amp; Pendules</a><a href="/familles-ame.html">Familles d’Âme</a><a href="/dons.html">Les Dons</a><a href="/a-propos.html">À propos</a><a href="/temoignages.html">Témoignages</a><a href="/contact.html">Contact</a></nav></header>
-<section class="hero"><img class="herologo" src="/logo-rodolphe.webp" alt="Rodolphe Torres Tirado"><h1>Rodolphe — Accompagnement spirituel et bien-être</h1><div class="lotus">❀</div><p class="lead">Un temps d’écoute et de partage pour votre cheminement personnel et spirituel</p>
-<div class="pastilles"><a class="pastille" href="/energeticien.html"><span>✿</span>Énergéticien</a><a class="pastille" href="/magnetiseur.html"><span>∩</span>Magnétiseur</a><a class="pastille" href="/chakras.html"><span>✺</span>Chakras</a><a class="pastille" href="/chaman.html"><span>☾</span>Chaman</a><a class="pastille" href="/liberation.html"><span>?</span>Libération des blocages</a><a class="pastille" href="/vente.html"><span>🛍️</span>Vente</a></div>
-<p><a class="btn" href="/contact.html">Me contacter ›</a></p>
-<div class="contactbar"><a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a><a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></div>
-<p class="closing">Ensemble, cheminons vers un mieux-être durable</p></section>
-<section class="duo" aria-label="Mes autres sites"><div class="duo-card"><h2>Mes autres sites</h2><p>Retrouvez mes autres espaces en un clic.</p><div class="duo-list"><div class="duo-item"><b>Ma Gestion Web</b><span>Présentation de Ma Gestion et accès à l’application.</span><a class="duo-btn" href="https://headless-aniivsnjbym-guerrisseur-140b.wix-site-host.com/">Accéder</a></div><div class="duo-item"><b>BLEU PRO</b><span>Espace de présentation et d’accès à l’application.</span><a class="duo-btn" href="https://headless-ujizxddugul-guerrisseur-140b.wix-site-host.com/">Accéder</a></div><div class="duo-item"><b>Mes Documents</b><span>Espace de documents et ressources.</span><a class="duo-btn" href="https://headless-aniivsnjbym-guerrisseur-140b.wix-site-host.com/">Accéder</a></div></div></div></section>
+<header class="top">
+  <a href="/index.html"><img src="/logos.JPG" alt="Logo R"></a>
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/pierres-pendules.html">Pierres &amp; Pendules</a>
+    <a href="/familles-ame.html">Familles d’Âme</a>
+    <a href="/dons.html">Les Dons</a>
+    <a href="/a-propos.html">À propos</a>
+    <a href="/temoignages.html">Témoignages</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
 
+<section class="hero">
+  <img class="herologo" src="/rodolphe.JPG" alt="Rodolphe Torres Tirado">
+  <h1>Rodolphe — Accompagnement spirituel et bien-être</h1>
+  <div class="lotus">❀</div>
+  <p class="lead">Un temps d’écoute et de partage pour votre cheminement personnel et spirituel</p>
+  <div class="pastilles">
+    <a class="pastille" href="/energeticien.html"><span>✿</span>Énergéticien</a>
+    <a class="pastille" href="/magnetiseur.html"><span>∩</span>Magnétiseur</a>
+    <a class="pastille" href="/chakras.html"><span>✺</span>Chakras</a>
+    <a class="pastille" href="/chaman.html"><span>☾</span>Chaman</a>
+    <a class="pastille" href="/liberation.html"><span>?</span>Libération des blocages</a>
+    <a class="pastille" href="/vente.html"><span>🛍️</span>Vente</a>
+  </div>
+  <p><a class="btn" href="/contact.html">Me contacter ›</a></p>
+  <div class="contactbar">
+    <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a>
+    <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a>
+  </div>
+  <p class="closing">Ensemble, cheminons vers un mieux-être durable</p>
+</section>
 
+<section class="duo" aria-label="Mes autres sites">
+  <div class="duo-card">
+    <h2>Mes autres sites</h2>
+    <p>Retrouvez mes autres espaces en un clic.</p>
+    <div class="duo-list">
+      <div class="duo-item"><b>Ma Gestion Web</b><span>Présentation de Ma Gestion et accès à l’application.</span><a class="duo-btn" href="https://headless-aniivsnjbym-guerrisseur-140b.wix-site-host.com/">Accéder</a></div>
+      <div class="duo-item"><b>BLEU PRO</b><span>Espace de présentation et d’accès à l’application.</span><a class="duo-btn" href="https://headless-ujizxddugul-guerrisseur-140b.wix-site-host.com/">Accéder</a></div>
+      <div class="duo-item"><b>Mes Documents</b><span>Espace de documents et ressources.</span><a class="duo-btn" href="https://headless-aniivsnjbym-guerrisseur-140b.wix-site-host.com/">Accéder</a></div>
+    </div>
+  </div>
+</section>
 
-<section class="color-system" aria-label="Préférence de couleur"><div id="auth-form"><h2>Connexion</h2><label for="email">E-mail</label><input id="email" type="email" autocomplete="email" placeholder="ton@email.com"><label for="password">Mot de passe</label><input id="password" type="password" autocomplete="current-password" placeholder="Mot de passe"><button id="sign-in" type="button">Se connecter</button><button id="sign-up" type="button">Créer un compte</button><p id="auth-status" class="system-status" role="status"></p></div><div id="user-panel" hidden><p id="user-email"></p><button id="sign-out" type="button">Se déconnecter</button></div><h2>Couleur préférée</h2><p>Connecte-toi, puis choisis une couleur : elle sera enregistrée dans Supabase pour ton compte.</p><div class="swatches"><button class="swatch" data-color="#7c5cff" style="--swatch:#7c5cff" aria-label="Violet"></button><button class="swatch" data-color="#00a884" style="--swatch:#00a884" aria-label="Vert"></button><button class="swatch" data-color="#ff7a59" style="--swatch:#ff7a59" aria-label="Orange"></button><button class="swatch" data-color="#2f80ed" style="--swatch:#2f80ed" aria-label="Bleu"></button></div><p id="color-status" class="system-status" role="status">Connecte-toi pour enregistrer une couleur.</p></section>
-<footer><p>Guérisseur de l’Âme · <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a> · <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></p></footer><script src="/app.js"></script>
-</body></html>
+<section class="color-system" aria-label="Préférence de couleur">
+  <div id="auth-form">
+    <h2>Connexion</h2>
+    <label for="email">E-mail</label><input id="email" type="email" autocomplete="email" placeholder="ton@email.com">
+    <label for="password">Mot de passe</label><input id="password" type="password" autocomplete="current-password" placeholder="Mot de passe">
+    <button id="sign-in" type="button">Se connecter</button><button id="sign-up" type="button">Créer un compte</button>
+    <p id="auth-status" class="system-status" role="status"></p>
+  </div>
+  <div id="user-panel" hidden>
+    <p id="user-email"></p><button id="sign-out" type="button">Se déconnecter</button>
+  </div>
+  <h2>Couleur préférée</h2>
+  <p>Connecte-toi, puis choisis une couleur : elle sera enregistrée dans Supabase pour ton compte.</p>
+  <div class="swatches">
+    <button class="swatch" data-color="#7c5cff" style="--swatch:#7c5cff" aria-label="Violet"></button>
+    <button class="swatch" data-color="#00a884" style="--swatch:#00a884" aria-label="Vert"></button>
+    <button class="swatch" data-color="#ff7a59" style="--swatch:#ff7a59" aria-label="Orange"></button>
+    <button class="swatch" data-color="#2f80ed" style="--swatch:#2f80ed" aria-label="Bleu"></button>
+  </div>
+  <p id="color-status" class="system-status" role="status">Connecte-toi pour enregistrer une couleur.</p>
+</section>
+
+<footer>
+  <p>Guérisseur de l’Âme · <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a> · <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
