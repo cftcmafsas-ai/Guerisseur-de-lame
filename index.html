@@ -385,6 +385,21 @@ body{background:#e8f4ff;color:#143d78}
 .music-float{position:fixed!important;right:20px!important;bottom:22px!important;top:auto!important;z-index:10010!important;display:grid!important;place-items:center!important;width:58px!important;height:58px!important;border:2px solid #fff!important;border-radius:50%!important;background:linear-gradient(145deg,#4ba4e6,#1678c8)!important;color:#fff!important;font-size:30px!important;line-height:1!important;box-shadow:0 7px 22px rgba(32,115,187,.3)!important;cursor:pointer!important}
 .music-float:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .music-float:after{content:none!important}
+
+/* Cadre « Mes autres sites » : même structure verticale que Ma Gestion Web / Mes Documents. */
+.other-sites-wrap{width:100%;max-width:900px;margin:26px auto;padding:28px 18px 34px}
+.other-sites-card{padding:24px 22px;border:1px solid var(--site-border,#dceaf4);border-radius:20px;background:var(--site-card,#fbfdff);color:var(--site-text,#435d73);box-shadow:0 8px 22px rgba(58,73,85,.05);text-align:center}
+.other-sites-card h2{margin:0 0 8px;color:var(--site-text,#435d73);font:600 clamp(1.55rem,3vw,2rem)/1.2 "Cormorant Garamond",Georgia,serif}
+.other-sites-card>p{margin:0 auto 24px;color:var(--site-muted,#7891a5);font-size:1rem}
+.other-sites-list{display:flex;flex-direction:column;gap:18px}
+.other-sites-item{display:flex;flex-direction:column;align-items:center;gap:7px;padding:0 0 18px;border-bottom:1px solid var(--site-border,#dceaf4);text-align:center}
+.other-sites-item:last-child{padding-bottom:0;border-bottom:0}
+.other-sites-item b{color:var(--site-text,#435d73);font:600 1.15rem/1.25 "DM Sans",system-ui,sans-serif}
+.other-sites-item span{max-width:520px;color:var(--site-muted,#7891a5);font-size:.9rem;line-height:1.5}
+.other-sites-item a{display:inline-block;margin-top:4px;padding:11px 24px;border:1px solid var(--site-border,#dceaf4);border-radius:999px;background:var(--site-accent,#b9dcf5);color:var(--site-text,#435d73);font:600 .95rem "DM Sans",system-ui,sans-serif;text-decoration:none}
+.other-sites-item a:hover{filter:brightness(.97)}
+@media(max-width:600px){.other-sites-wrap{padding:20px 14px 26px;margin:18px auto}.other-sites-card{padding:20px 16px;border-radius:18px}.other-sites-list{gap:15px}.other-sites-item{padding-bottom:15px}}
+
 </style>
 </head>
 <body>
@@ -459,6 +474,19 @@ body{background:#e8f4ff;color:#143d78}
       <h2>Bienvenue dans mon univers</h2>
       <p>Un espace dédié à l’Amour, au Partage et à la Spiritualité. Découvrez mes différentes pratiques, mes réflexions et les chemins de libération des blocages et des souffrances physiques, psychiques, morales, corporelles et spirituelles.</p>
     </section>
+
+  <section class="other-sites-wrap" id="autres-sites" aria-label="Mes autres sites">
+    <div class="other-sites-card">
+      <h2>Mes autres sites</h2>
+      <p>Retrouvez mes autres espaces en un clic.</p>
+      <div class="other-sites-list">
+        <div class="other-sites-item"><b>Mes Documents</b><span>Votre espace pour retrouver et organiser vos documents, photos et souvenirs.</span><a href="https://mes-documents.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Accéder</a></div>
+        <div class="other-sites-item"><b>Ma Gestion Web</b><span>Présentation de Ma Gestion et accès à votre application.</span><a href="https://ma-gestion-web.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Accéder</a></div>
+        <div class="other-sites-item"><b>BLEU PRO</b><span>Espace de présentation et d’accès à l’application.</span><a href="https://bleu-pro.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Accéder</a></div>
+        <div class="other-sites-item"><b>Espace Créatif</b><span>Un espace dédié à l’écriture, à la musique et aux créations.</span><a href="https://espace-creatif.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Accéder</a></div>
+      </div>
+    </div>
+  </section>
 
     <section class="home-contact">
       <h2>Entrons en contact</h2>
