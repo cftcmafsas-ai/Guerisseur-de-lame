@@ -84,3 +84,13 @@ input,textarea,select{max-width:100%;border:1px solid #bfdcf3;border-radius:12px
  .card{padding:18px}
  .band{padding:18px}
 }
+
+/* Navigation pastel commune aux pages intérieures : une teinte douce par rubrique. */
+.top nav a:nth-child(1){background:#eee5fb;color:#65518b;border-color:#d9c8f0}
+.top nav a:nth-child(2){background:#fde8ee;color:#995c73;border-color:#f2cbd8}
+.top nav a:nth-child(3){background:#eee9fb;color:#695a91;border-color:#d8cef2}
+.top nav a:nth-child(4){background:#e5f5ed;color:#477b61;border-color:#c5e7d4}
+.top nav a:nth-child(5){background:#fff0e5;color:#986b4e;border-color:#f5d9c4}
+.top nav a:nth-child(6){background:#fff7df;color:#88733e;border-color:#f0e3b5}
+.top nav a:nth-child(7){background:#e2f5f5;color:#427b7a;border-color:#c0e5e4}
+.top nav a:hover,.top nav a:focus-visible{filter:brightness(.97);transform:translateY(-1px);color:inherit;outline:none}
