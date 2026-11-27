@@ -265,6 +265,33 @@ body{background:#e8f4ff;color:#143d78}
     .hero-player-track>img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
     .service-section{position:relative;z-index:1}
     .service-card{min-width:0}
+    .service-section .service-card{
+      box-sizing:border-box;min-width:0;width:100%;min-height:132px;
+      display:flex;flex-direction:row;align-items:center;justify-content:flex-start;
+      gap:14px;padding:18px;border:1px solid #b9d8f2;border-radius:22px;
+      background:linear-gradient(145deg,#f8fcff,#e5f2ff);overflow:hidden;
+      text-align:left;
+    }
+    .service-section .service-icon{
+      box-sizing:border-box;display:grid;place-items:center;flex:0 0 58px;
+      width:58px;height:58px;margin:0;border:1px solid #b9dafa;border-radius:17px;
+      background:#fff;color:#268bd1;font-size:2.5rem;line-height:1;text-align:center;
+    }
+    .service-section .service-icon-star{font-size:3.1rem;color:#268bd1}
+    .service-section .service-card-content{
+      display:flex;flex:1 1 auto;min-width:0;flex-direction:column;align-items:flex-start;gap:6px;
+    }
+    .service-section .service-title{display:block;margin:0;color:#164b8e;font-size:clamp(1.05rem,1.7vw,1.45rem);line-height:1.15;overflow-wrap:anywhere}
+    .service-section .service-description{display:block;margin:0;color:#46749c;font-size:clamp(.9rem,1.25vw,1.05rem);line-height:1.25;overflow-wrap:anywhere}
+    .service-section .service-card:hover{border-color:#72b4e8;background:linear-gradient(145deg,#fff,#eaf5ff)}
+    @media(max-width:650px){
+      .service-section{grid-template-columns:1fr 1fr;gap:10px}
+      .service-section .service-card{min-height:120px;gap:9px;padding:12px 10px;border-radius:17px}
+      .service-section .service-icon{flex-basis:42px;width:42px;height:42px;border-radius:13px;font-size:1.9rem}
+      .service-section .service-icon-star{font-size:2.35rem}
+      .service-section .service-title{font-size:1.02rem}
+      .service-section .service-description{font-size:.82rem}
+    }
     .service-title{font-size:clamp(1rem,1.5vw,1.35rem)}
     .service-description{font-size:clamp(.85rem,1.2vw,1rem)}
     .home-intro{max-width:1100px;margin:0 auto;padding:42px 22px 18px;text-align:center}
@@ -347,12 +374,30 @@ body{background:#e8f4ff;color:#143d78}
     </section>
 
     <section class="service-section" aria-label="Mes activités et accompagnements">
-      <a class="service-card" href="energeticien.html"><span class="service-icon">✧</span><span class="service-title">Énergéticien</span><span class="service-description">Énergie et équilibre intérieur</span></a>
-      <a class="service-card" href="magnetiseur.html"><span class="service-icon">☯</span><span class="service-title">Magnétiseur</span><span class="service-description">Magnétisme et harmonisation</span></a>
-      <a class="service-card" href="chakras.html"><span class="service-icon">✺</span><span class="service-title">Chakras</span><span class="service-description">Équilibre des centres énergétiques</span></a>
-      <a class="service-card" href="liberation.html"><span class="service-icon">♡</span><span class="service-title">Libération des blocages</span><span class="service-description">Libération et cheminement personnel</span></a>
-      <a class="service-card service-extra" href="chaman.html"><span class="service-icon">☾</span><span class="service-title">Chaman</span><span class="service-description">Approche spirituelle</span></a>
-      <a class="service-card service-extra" href="vente.html"><span class="service-icon">✧</span><span class="service-title">Mes ventes</span><span class="service-description">Découvrir les articles proposés</span></a>
+      <a class="service-card" href="energeticien.html">
+        <span class="service-icon service-icon-star" aria-hidden="true">✧</span>
+        <span class="service-card-content"><span class="service-title">Énergéticien</span><span class="service-description">Énergétique · 50 €</span></span>
+      </a>
+      <a class="service-card" href="magnetiseur.html">
+        <span class="service-icon" aria-hidden="true">☯</span>
+        <span class="service-card-content"><span class="service-title">Magnétiseur</span><span class="service-description">Magnétisme et harmonisation</span></span>
+      </a>
+      <a class="service-card" href="chakras.html">
+        <span class="service-icon" aria-hidden="true">✺</span>
+        <span class="service-card-content"><span class="service-title">Chakras</span><span class="service-description">Équilibre des centres énergétiques</span></span>
+      </a>
+      <a class="service-card" href="liberation.html">
+        <span class="service-icon" aria-hidden="true">♡</span>
+        <span class="service-card-content"><span class="service-title">Libération des blocages</span><span class="service-description">Libération et cheminement personnel</span></span>
+      </a>
+      <a class="service-card service-extra" href="chaman.html">
+        <span class="service-icon" aria-hidden="true">☾</span>
+        <span class="service-card-content"><span class="service-title">Chaman</span><span class="service-description">Approche spirituelle</span></span>
+      </a>
+      <a class="service-card service-extra" href="vente.html">
+        <span class="service-icon" aria-hidden="true">✧</span>
+        <span class="service-card-content"><span class="service-title">Mes ventes</span><span class="service-description">Découvrir les articles proposés</span></span>
+      </a>
     </section>
 
     <section class="home-intro">
