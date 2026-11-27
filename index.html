@@ -380,6 +380,11 @@ body{background:#e8f4ff;color:#143d78}
 .music-backdrop{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important;background:rgba(35,67,100,.5)!important;cursor:pointer!important}
 @media(max-width:600px){.music-modal{padding:8px!important}.music-modal-card{max-height:94dvh!important;border-radius:18px!important}.music-modal-frame{height:68dvh!important;min-height:340px!important}.top nav #music-open{padding:8px 12px!important}}
 
+
+/* Petit bouton d'accès uniquement : le lecteur reste exclusivement dans la fenêtre pop-up. */
+.music-float{position:fixed!important;right:20px!important;bottom:22px!important;top:auto!important;z-index:10010!important;display:grid!important;place-items:center!important;width:58px!important;height:58px!important;border:2px solid #fff!important;border-radius:50%!important;background:linear-gradient(145deg,#4ba4e6,#1678c8)!important;color:#fff!important;font-size:30px!important;line-height:1!important;box-shadow:0 7px 22px rgba(32,115,187,.3)!important;cursor:pointer!important}
+.music-float:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.music-float:after{content:none!important}
 </style>
 </head>
 <body>
@@ -402,7 +407,7 @@ body{background:#e8f4ff;color:#143d78}
     <a href="a-propos.html">À propos</a>
     <a href="temoignages.html">Témoignages</a>
     <a href="contact.html">Contact</a>
-    <a href="#music-modal" id="music-open" aria-haspopup="dialog" aria-controls="music-modal" aria-expanded="false">♫ Mon Espace Musique</a>
+    <a href="#music-modal" data-music-open aria-haspopup="dialog" aria-controls="music-modal" aria-expanded="false">♫ Mon Espace Musique</a>
   </nav>
 
   <main>
@@ -475,6 +480,8 @@ body{background:#e8f4ff;color:#143d78}
     </section>
   </main>
 
+  <button class="music-float" type="button" data-music-open aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal" aria-expanded="false">♫</button>
+
   <div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
     <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
     <section class="music-modal-card">
@@ -496,11 +503,11 @@ body{background:#e8f4ff;color:#143d78}
   <script>
     (function(){
       var modal=document.getElementById('music-modal');
-      var open=document.getElementById('music-open');
+      var openers=Array.prototype.slice.call(document.querySelectorAll('[data-music-open]'));
       var lastFocus=null;
-      window.showMusic=function(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');if(open)open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();};
-      function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');if(open)open.setAttribute('aria-expanded','false');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
-      if(open)open.addEventListener('click',function(event){event.preventDefault();window.showMusic();});
+      window.showMusic=function(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');openers.forEach(function(button){button.setAttribute('aria-expanded','true');});modal.querySelector('.music-close').focus();};
+      function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');openers.forEach(function(button){button.setAttribute('aria-expanded','false');});if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+      openers.forEach(function(button){button.addEventListener('click',function(event){event.preventDefault();window.showMusic();});});
       modal.querySelectorAll('[data-music-close]').forEach(function(button){button.addEventListener('click',hide);});
       modal.addEventListener('click',function(event){if(event.target===modal)hide();});
       document.addEventListener('keydown',function(event){if(!modal.hidden&&event.key==='Escape')hide();});
