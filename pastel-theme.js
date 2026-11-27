@@ -2,7 +2,7 @@
   "use strict";
   var palettes=[
     {id:"ciel",name:"Couleur d’origine",bg:"#eff8ff",card:"#fbfdff",text:"#435d73",muted:"#7891a5",accent:"#b9dcf5",soft:"#dceefa",border:"#dceaf4"},
-    {id:"azur",name:"Bleu azur",bg:"#f4f7ff",card:"#fcfdff",text:"#46557a",muted:"#7c88a8",accent:"#cdd9f7",soft:"#e6edfc",border:"#e2e8f6"},
+    {id:"corail",name:"Corail",bg:"#fff6f1",card:"#fffdfb",text:"#704b43",muted:"#a17b70",accent:"#efb19d",soft:"#fbe4da",border:"#f3ddd4"},
     {id:"perle",name:"Gris perle",bg:"#f8f8fa",card:"#fefefe",text:"#55575f",muted:"#85878f",accent:"#dcdde3",soft:"#eeeef2",border:"#e8e8ec"},
     {id:"rose",name:"Rose poudré",bg:"#fff8f9",card:"#fffafb",text:"#684c56",muted:"#987b85",accent:"#f0d0d9",soft:"#faeaef",border:"#f4e6eb"},
     {id:"lavande",name:"Lavande",bg:"#faf8ff",card:"#fdfbff",text:"#594f70",muted:"#887e9e",accent:"#ddd3f1",soft:"#f1ebfa",border:"#efe9f5"},
@@ -30,13 +30,13 @@
 
     "input,textarea,select{background:var(--site-card)!important;color:var(--site-text)!important;border-color:var(--site-border)!important}"+
     "body{--bg:var(--site-bg);--card:var(--site-card);--tx:var(--site-text);--text:var(--site-text);--mu:var(--site-muted);--muted:var(--site-muted);--bd:var(--site-border);--border:var(--site-border);--p1:var(--site-soft);--p2:var(--site-soft);--p3:var(--site-accent);--accent:var(--site-accent);--ac:var(--site-accent);--dk:var(--site-text)}"+
-    "#pastel-theme-panel{position:fixed;right:14px;bottom:72px;z-index:11000;width:min(310px,calc(100vw - 28px));padding:14px;background:var(--site-card);color:var(--site-text);border:1px solid var(--site-border);border-radius:18px;box-shadow:0 12px 36px rgba(50,60,80,.18);font:14px/1.4 system-ui,sans-serif}"+
+    "#pastel-theme-panel{position:fixed;right:14px;bottom:82px;z-index:11000;width:min(310px,calc(100vw - 28px));padding:14px;background:var(--site-card);color:var(--site-text);border:1px solid var(--site-border);border-radius:18px;box-shadow:0 12px 36px rgba(50,60,80,.18);font:14px/1.4 system-ui,sans-serif}"+
     "#pastel-theme-panel .pt-title{font-weight:700;margin:0 0 10px;color:var(--site-text)}"+
     "#pastel-theme-panel .pt-colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}"+
     "#pastel-theme-panel button{display:flex;align-items:center;gap:7px;width:100%;padding:8px;border:1px solid var(--site-border);border-radius:11px;background:var(--site-soft);color:var(--site-text);font:12px system-ui,sans-serif;cursor:pointer}"+
     "#pastel-theme-panel button[aria-pressed=true]{outline:2px solid var(--site-text);outline-offset:1px}"+
     "#pastel-theme-panel i{display:block;width:19px;height:19px;flex:none;border-radius:50%;border:1px solid rgba(0,0,0,.08)}"+
-    "#pastel-theme-toggle{position:fixed;right:14px;bottom:14px;z-index:11001;padding:9px 14px;border:1px solid var(--site-border);border-radius:999px;background:var(--site-soft);color:var(--site-text);font-weight:700;box-shadow:0 5px 16px rgba(50,60,80,.13);cursor:pointer}"+
+    "#pastel-theme-toggle{position:fixed;right:88px;bottom:88px;z-index:11001;display:grid;place-items:center;width:58px;height:58px;padding:0;border:2px solid #fff;border-radius:50%;background:linear-gradient(145deg,#f3d9e8,#d9b8d2);color:#65465f;font-size:30px;line-height:1;box-shadow:0 7px 22px rgba(90,65,90,.22);cursor:pointer}"+
     "#pastel-theme-panel[hidden]{display:none!important}"+
     "#pastel-theme-close{float:right;border:0;border-radius:50%;width:30px;height:30px;font-size:19px;line-height:1;cursor:pointer;background:var(--site-soft);color:var(--site-text)}";
   if(!style.parentNode)document.head.appendChild(style);
@@ -53,11 +53,11 @@
   var panel=document.getElementById("pastel-theme-panel");
   if(!panel){
     panel=document.createElement("aside");panel.id="pastel-theme-panel";
-    panel.setAttribute("aria-label","Choisir une couleur pastel");panel.hidden=true;
+    panel.setAttribute("aria-label","Choisir une couleur");panel.hidden=true;
     var close=document.createElement("button");close.id="pastel-theme-close";close.type="button";close.textContent="×";
     close.setAttribute("aria-label","Fermer les couleurs");
     close.addEventListener("click",function(){panel.hidden=true;});
-    var title=document.createElement("p");title.className="pt-title";title.textContent="Choisissez votre ambiance pastel";
+    var title=document.createElement("p");title.className="pt-title";title.textContent="Choisissez votre ambiance";
     var grid=document.createElement("div");grid.className="pt-colors";
     palettes.forEach(function(p){
       var b=document.createElement("button");b.type="button";b.dataset.theme=p.id;b.setAttribute("aria-label",p.name);
@@ -71,9 +71,9 @@
   var toggle=document.getElementById("pastel-theme-toggle");
   if(!toggle){
     toggle=document.createElement("button");toggle.id="pastel-theme-toggle";toggle.type="button";
-    toggle.textContent="🎨 Couleurs pastel";document.body.appendChild(toggle);
+    toggle.textContent="🎨";toggle.setAttribute("aria-label","Ouvrir les couleurs");toggle.setAttribute("title","Changer les couleurs");document.body.appendChild(toggle);
   }
-  toggle.addEventListener("click",function(){panel.hidden=!panel.hidden;});
+  toggle.addEventListener("click",function(){if(panel.hidden){apply("ciel");panel.hidden=false;}else{panel.hidden=true;}});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")panel.hidden=true;});
   apply(current);
 })();
