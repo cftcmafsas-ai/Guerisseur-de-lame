@@ -46,7 +46,6 @@
   <a href="familles-ame.html">Familles d’Âme</a>
   <a href="dons.html">Les Dons</a>
   <a href="a-propos.html">À propos</a>
-  <a href="temoignages.html">Témoignages</a>
   <a href="contact.html">Contact</a>
 </nav>
 
@@ -60,10 +59,17 @@
       <p class="hero-description">Je vous accompagne dans votre cheminement spirituel<br>pour retrouver équilibre, énergie et bien-être.</p>
       <a class="hero-learn" href="a-propos.html"><span aria-hidden="true">❀</span> En savoir plus　→</a>
     </div>
-    <div class="hero-music-callout">
-      <p>Écoutez et découvrez<br>ma musique</p>
-      <button type="button" class="music-inline-open" onclick="document.getElementById('music-open').click()">♫　Mon Espace Musique　↗</button>
-    </div>
+    <section class="hero-player" aria-label="Lecteur Mon Espace Musique">
+      <header class="hero-player-head"><span class="hero-player-note">♫</span><h2>Mon Espace Musique</h2><button type="button" class="hero-player-close" aria-label="Ouvrir le lecteur" onclick="document.getElementById('music-open').click()">×</button></header>
+      <p class="hero-player-subtitle">Écoutez et découvrez ma musique</p>
+      <div class="hero-player-track">
+        <img data-reference-image="album" alt="Illustration de Sérénité Intérieure">
+        <div class="hero-player-details"><h3>Sérénité Intérieure</h3><p>Rodolphe Torres Tirado</p><div class="hero-player-progress"><span></span></div><div class="hero-player-time"><span>00:00</span><span>04:32</span></div>
+          <div class="hero-player-controls"><button type="button" aria-label="Volume" onclick="document.getElementById('music-open').click()">◖))</button><button type="button" aria-label="Précédent" onclick="document.getElementById('music-open').click()">|◀</button><button type="button" class="hero-player-play" aria-label="Lire" onclick="document.getElementById('music-open').click()">▶</button><button type="button" aria-label="Suivant" onclick="document.getElementById('music-open').click()">▶|</button><button type="button" aria-label="Liste" onclick="document.getElementById('music-open').click()">☷</button></div>
+        </div>
+      </div>
+      <a class="hero-player-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">♧　Ouvrir Mon Espace Musique ↗</a>
+    </section>
   </div>
 </section>
 <section class="service-section" aria-label="Mes accompagnements">
