@@ -94,3 +94,47 @@ input,textarea,select{max-width:100%;border:1px solid #bfdcf3;border-radius:12px
 .top nav a:nth-child(6){background:#fff7df;color:#88733e;border-color:#f0e3b5}
 .top nav a:nth-child(7){background:#e2f5f5;color:#427b7a;border-color:#c0e5e4}
 .top nav a:hover,.top nav a:focus-visible{filter:brightness(.97);transform:translateY(-1px);color:inherit;outline:none}
+
+
+/* Harmonisation pastel des pages intérieures avec l'identité de l'accueil */
+body:not(.home){color:#536b83;background:linear-gradient(180deg,#eff8ff 0%,#fbfdff 48%,#eef8fb 100%)}
+body:not(.home) h1,body:not(.home) h2,body:not(.home) h3{color:#7183a3}
+body:not(.home) .top{background:linear-gradient(105deg,#eaf5ff,#dff1f7 50%,#f8f3fb);border:0;box-shadow:0 5px 18px rgba(80,125,155,.08)}
+body:not(.home) .top>a img{max-height:62px;object-fit:contain;background:#fff;border:1px solid #e1edf5;border-radius:16px;padding:4px}
+body:not(.home) .top nav a{border:1px solid transparent;border-radius:999px;box-shadow:0 3px 9px rgba(90,110,140,.07);font:600 15px/1.2 "DM Sans",sans-serif}
+body:not(.home) .top nav a:nth-child(1){background:#eee5fb;color:#65518b;border-color:#d9c8f0}
+body:not(.home) .top nav a:nth-child(2){background:#fde8ee;color:#995c73;border-color:#f2cbd8}
+body:not(.home) .top nav a:nth-child(3){background:#eee9fb;color:#695a91;border-color:#d8cef2}
+body:not(.home) .top nav a:nth-child(4){background:#e5f5ed;color:#477b61;border-color:#c5e7d4}
+body:not(.home) .top nav a:nth-child(5){background:#fff0e5;color:#986b4e;border-color:#f5d9c4}
+body:not(.home) .top nav a:nth-child(6){background:#fff7df;color:#88733e;border-color:#f0e3b5}
+body:not(.home) .top nav a:nth-child(7){background:#e2f5f5;color:#427b7a;border-color:#c0e5e4}
+body:not(.home) .top nav a:hover{filter:brightness(.97);transform:translateY(-1px)}
+body:not(.home) .wrap{max-width:1120px;padding:clamp(30px,5vw,58px) clamp(16px,3vw,30px) 64px}
+body:not(.home) .wrap>h1:first-child:after{width:112px;height:3px;background:linear-gradient(90deg,#cbb8e9,#9ed9df)}
+body:not(.home) .lead{color:#7d8eaa}
+body:not(.home) .card,body:not(.home) .duo-card{background:linear-gradient(145deg,#fff,#f8fbff);border:1px solid #e0eaf3;border-radius:22px;box-shadow:0 7px 22px rgba(90,120,150,.07)}
+body:not(.home) .band{background:linear-gradient(120deg,#f0eafb,#e8f5f7);border:1px solid #e0d9ef;border-radius:22px;color:#5d7189}
+body:not(.home) .band h2,body:not(.home) .band h3{color:#6e7198}
+body:not(.home) .btn,body:not(.home) .duo-btn{background:linear-gradient(120deg,#eee7fa,#dff1f5);border:1px solid #d7d0eb;color:#665d87;border-radius:999px;box-shadow:0 4px 12px rgba(100,110,145,.09)}
+body:not(.home) footer{background:linear-gradient(110deg,#edf5fc,#fbfaff,#e9f5f6);border-top:1px solid #e0eaf2;color:#71849a}
+body:not(.home) footer a{color:#6683a3}
+body.page-pierres{--page-accent:#d98da9;--page-soft:#fff0f4;--page-border:#f0d4df}
+body.page-energeticien{--page-accent:#8c78b7;--page-soft:#f1edfb;--page-border:#ded5f0}
+body.page-magnetiseur{--page-accent:#79a9c5;--page-soft:#edf6fb;--page-border:#d2e5ef}
+body.page-chakras{--page-accent:#8b82bd;--page-soft:#f1effb;--page-border:#dfdaf1}
+body.page-liberation{--page-accent:#83ad95;--page-soft:#eff8f1;--page-border:#d7eadd}
+body.page-chaman{--page-accent:#b58d79;--page-soft:#fbf2ec;--page-border:#efdfd3}
+body.page-familles{--page-accent:#9a8ac7;--page-soft:#f3effb;--page-border:#e1daf1}
+body.page-dons{--page-accent:#83ad95;--page-soft:#eff8f1;--page-border:#d7eadd}
+body.page-apropos{--page-accent:#c49b80;--page-soft:#fbf3ed;--page-border:#efdfd2}
+body.page-temoignages{--page-accent:#c2aa70;--page-soft:#fcf8e9;--page-border:#eee5c8}
+body.page-contact{--page-accent:#78aeb0;--page-soft:#edf8f7;--page-border:#d1e8e5}
+body.page-ventes{--page-accent:#d98da9;--page-soft:#fff0f4;--page-border:#f0d4df}
+body[class*="page-"] .wrap>h1:first-child{color:var(--page-accent)}
+body[class*="page-"] .wrap>h1:first-child:after{background:var(--page-accent)}
+body[class*="page-"] .card{border-color:var(--page-border)}
+body[class*="page-"] .band{background:linear-gradient(120deg,var(--page-soft),#f7fbff);border-color:var(--page-border)}
+body[class*="page-"] .band h2,body[class*="page-"] .band h3{color:var(--page-accent)}
+body[class*="page-"] .btn{background:linear-gradient(120deg,var(--page-soft),#fff);border-color:var(--page-border);color:var(--page-accent)}
+@media(max-width:760px){body:not(.home) .top{align-items:flex-start;flex-direction:column;gap:8px;padding:9px 12px}body:not(.home) .top nav{width:100%;justify-content:flex-start;padding-bottom:3px}body:not(.home) .top nav a{font-size:14px;padding:9px 14px}}
