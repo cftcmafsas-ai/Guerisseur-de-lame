@@ -249,6 +249,21 @@ body{background:#e8f4ff;color:#143d78}
 .other-sites-item a{background:linear-gradient(135deg,#d7edfc,#b9dcf5)!important;border:1px solid #a9d2f3!important;color:#435d73!important;box-shadow:0 5px 16px rgba(43,112,171,.10)}
 .other-sites-item a:hover{background:linear-gradient(135deg,#d7edfc,#b9dcf5)!important;box-shadow:0 8px 20px rgba(43,112,171,.16);filter:none}
 
+
+/* La fenêtre musicale reprend la carte de présentation d'origine, désormais uniquement dans le pop-up. */
+.music-popup-player{max-width:none!important;margin:14px 18px!important;border-color:#c8e1f5!important;border-radius:20px!important;background:var(--site-card,#fbfdff)!important;box-shadow:0 6px 20px rgba(43,112,171,.08)!important}
+.music-popup-player .hero-player-head{background:linear-gradient(90deg,var(--site-soft,#dceefa),var(--site-card,#fbfdff))!important;border-color:var(--site-border,#dceaf4)!important}
+.music-popup-player .hero-player-note,.music-popup-player .hero-player-head h2,.music-popup-player .hero-player-details h3,.music-popup-player .hero-player-details>p,.music-popup-player .hero-player-time{color:var(--site-text,#435d73)!important}
+.music-popup-player .hero-player-track{background:var(--site-card,#fbfdff)!important}
+.music-popup-player .hero-player-track>img{object-fit:contain!important;background:#fff}
+.music-popup-player .hero-player-controls{justify-content:center!important}
+.music-popup-player .hero-player-controls .hero-player-play{display:grid;place-items:center;width:54px;height:54px;text-decoration:none;background:linear-gradient(135deg,var(--site-soft,#dceefa),var(--site-accent,#b9dcf5))!important;color:var(--site-text,#435d73)!important;border:1px solid var(--site-border,#dceaf4)}
+.music-popup-player .hero-player-progress{background:var(--site-border,#dceaf4)}
+.music-popup-player .hero-player-progress span{background:var(--site-accent,#b9dcf5)}
+.music-popup-player .hero-player-link{background:linear-gradient(135deg,var(--site-soft,#dceefa),var(--site-accent,#b9dcf5))!important;color:var(--site-text,#435d73)!important}
+.music-modal-frame{height:min(42dvh,420px)!important;min-height:260px!important;margin:0 18px 16px!important;width:calc(100% - 36px)!important;border:1px solid var(--site-border,#dceaf4)!important;border-radius:14px!important}
+@media(max-width:600px){.music-float{bottom:86px!important;right:14px!important}.music-popup-player{margin:10px!important}.music-popup-player .hero-player-track{grid-template-columns:90px minmax(0,1fr)!important;gap:12px!important;padding:8px 12px 14px!important}.music-popup-player .hero-player-track>img{width:90px!important;height:90px!important}.music-popup-player .hero-player-details h3{font-size:1.15rem!important}.music-popup-player .hero-player-details>p{font-size:.9rem!important;margin-bottom:8px!important}.music-modal-frame{width:calc(100% - 20px)!important;height:38dvh!important;min-height:220px!important;margin:0 10px 12px!important}}
+
 </style>
   <style>
     /* Accueil reconstruit en vrais éléments HTML : aucun visuel de page aplati en image. */
@@ -387,7 +402,7 @@ body{background:#e8f4ff;color:#143d78}
 
 
 /* Petit bouton d'accès uniquement : le lecteur reste exclusivement dans la fenêtre pop-up. */
-.music-float{position:fixed!important;right:20px!important;bottom:22px!important;top:auto!important;z-index:10010!important;display:grid!important;place-items:center!important;width:58px!important;height:58px!important;border:2px solid #fff!important;border-radius:50%!important;background:linear-gradient(145deg,#4ba4e6,#1678c8)!important;color:#fff!important;font-size:30px!important;line-height:1!important;box-shadow:0 7px 22px rgba(32,115,187,.3)!important;cursor:pointer!important}
+.music-float{position:fixed!important;right:20px!important;bottom:88px!important;top:auto!important;z-index:10010!important;display:grid!important;place-items:center!important;width:58px!important;height:58px!important;border:2px solid #fff!important;border-radius:50%!important;background:linear-gradient(145deg,#4ba4e6,#1678c8)!important;color:#fff!important;font-size:30px!important;line-height:1!important;box-shadow:0 7px 22px rgba(32,115,187,.3)!important;cursor:pointer!important}
 .music-float:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .music-float:after{content:none!important}
 
@@ -522,9 +537,27 @@ body{background:#e8f4ff;color:#143d78}
         <h2 id="music-modal-title"><span aria-hidden="true">♫</span> Mon Espace Musique</h2>
         <button class="music-close" type="button" data-music-close aria-label="Fermer">×</button>
       </header>
-      <p class="music-modal-subtitle">Écoutez et découvrez ma musique</p>
-      <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" loading="lazy" allow="autoplay; clipboard-write"></iframe>
-      <div class="music-modal-footer"><a class="music-modal-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Ouvrir Mon Espace Musique dans un nouvel onglet ↗</a></div>
+      <section class="hero-player music-popup-player" aria-label="Présentation de ma playlist">
+        <div class="hero-player-head">
+          <span class="hero-player-note" aria-hidden="true">♫</span>
+          <h2>Mon Espace Musique</h2>
+        </div>
+        <p class="hero-player-subtitle">Écoutez et découvrez ma musique</p>
+        <div class="hero-player-track">
+          <img data-reference-image="album" alt="Illustration de l’univers musical de Rodolphe">
+          <div class="hero-player-details">
+            <h3>Rodolphe Torres Tirado</h3>
+            <p>Mes créations musicales</p>
+            <div class="hero-player-progress" aria-hidden="true"><span></span></div>
+            <div class="hero-player-time"><span>Mon univers musical</span><span>♫</span></div>
+            <div class="hero-player-controls">
+              <a class="hero-player-play" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer" aria-label="Écouter la playlist">▶</a>
+            </div>
+          </div>
+        </div>
+        <a class="hero-player-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Accéder à ma playlist ↗</a>
+      </section>
+      <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Playlist Mon Espace Musique" loading="lazy" allow="autoplay; clipboard-write"></iframe>
     </section>
   </div>
 
