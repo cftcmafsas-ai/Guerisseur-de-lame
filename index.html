@@ -36,7 +36,7 @@
 <body>
 
 <header class="top">
-  <a href="index.html"><img src="logo.svg" alt="Logo Rodolphe Torres Tirado"></a>
+  <a class="brand-lockup" href="index.html"><img src="rodolphe-logo.svg" alt="Rodolphe Torres Tirado — Guérisseur de l’Âme"></a>
   <nav>
     <a href="index.html">Accueil</a>
     <a href="pierres-pendules.html">Pierres &amp; Pendules</a>
@@ -48,41 +48,38 @@
   </nav>
 </header>
 
-<section class="hero">
-  <p class="en-construction" style="font-size:1.05rem;font-weight:600;color:#3f5566;margin:0 0 .4em">Site en construction, mais vous pouvez quand même consulter tous mes sites</p>
-  <h1>Guérisseur de l’Âme</h1>
-  <img class="herologo" src="rodolphe-logo.svg" alt="Rodolphe Torres Tirado">
-  <h2 class="hero-sous-titre" style="font-size:clamp(1.5rem,4.5vw,2.1rem);margin:.3em 0 .2em">Accompagnement spirituel et bien-être</h2>
-  <div class="lotus">❀</div>
-  <p class="lead">Un temps d’écoute et de partage pour votre cheminement personnel et spirituel</p>
-  <div class="pastilles">
-    <a class="pastille" href="energeticien.html"><span>✿</span>Énergéticien</a>
-    <a class="pastille" href="magnetiseur.html"><span>∩</span>Magnétiseur</a>
-    <a class="pastille" href="chakras.html"><span>✺</span>Chakras</a>
-    <a class="pastille" href="chaman.html"><span>☾</span>Chaman</a>
-    <a class="pastille" href="liberation.html"><span>?</span>Libération des blocages</a>
-    <a class="pastille" href="vente.html"><span>🛍️</span>Vente</a>
+<section class="hero-main">
+  <div class="hero-scenery" aria-hidden="true"><img src="lotus-water.svg" alt=""></div>
+  <div class="hero-title"><h1>Guérisseur de l’Âme</h1><p class="hero-sous-titre">Accompagnement spirituel et bien-être</p></div>
+  <div class="hero-layout">
+    <div class="welcome-panel"><h2><span class="welcome-lotus" aria-hidden="true">♧</span> Bienvenue</h2><p>Je vous accompagne sur le chemin du bien-être,<br>à travers une approche spirituelle et énergétique.</p>
+      <div class="service-cards">
+        <a class="service-card" href="energeticien.html"><span class="service-symbol lotus-symbol">❀</span><span>Énergéticien</span></a>
+        <a class="service-card" href="magnetiseur.html"><span class="service-symbol yin-symbol">☯</span><span>Magnétiseur</span></a>
+        <a class="service-card" href="chakras.html"><span class="service-symbol chakra-symbol">♙</span><span>Chakras</span></a>
+        <a class="service-card" href="liberation.html"><span class="service-symbol spiral-symbol">◎</span><span>Libération<br>des blocages</span></a>
+      </div>
+      <div class="hero-extra-links"><a href="chaman.html">Chaman</a><a href="vente.html">Vente</a><a href="contact.html">Me contacter</a></div>
+    </div>
+    <div class="hero-quote"><p>Un chemin vers la sérénité,<br>l’harmonie et la lumière…</p></div>
   </div>
-  <p><a class="btn" href="contact.html">Me contacter ›</a></p>
-  <div class="contactbar">
-    <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a>
-    <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a>
-  </div>
-  <p class="closing">Ensemble, cheminons vers un mieux-être durable</p>
+  <div class="contactbar"><a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a><a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></div>
+  <p class="closing">Découvrez un univers de bien-être et d’harmonie…</p>
 </section>
 
 
 
 
-<!-- Lecteur musical en fenêtre pop-up : le contenu du site reste inchangé. -->
+<!-- Lecteur musical en fenêtre pop-up -->
 <button id="music-open" class="music-float" type="button" aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal"><span aria-hidden="true">♫</span></button>
 <div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
   <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
   <section class="music-modal-card">
     <header class="music-modal-head"><h2 id="music-modal-title"><span aria-hidden="true">♫</span> Mon Espace Musique</h2><button class="music-close" type="button" data-music-close aria-label="Fermer">×</button></header>
-    <p class="music-modal-subtitle">Écoutez et découvrez ma musique</p>
+    <div class="music-popup-intro"><img src="meditation-cover.svg" alt=""><p>Écoutez votre musique<br>en toute sérénité</p></div>
     <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write"></iframe>
-    <div class="music-modal-footer"><a class="music-modal-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Ouvrir Mon Espace Musique ↗</a></div>
+    <div class="music-modal-slogan">Un moment de paix… tout simplement <span aria-hidden="true">♧</span></div>
+    <div class="music-modal-footer"><button class="music-modal-link" type="button" data-music-close>×　Fermer</button></div>
   </section>
 </div>
 
