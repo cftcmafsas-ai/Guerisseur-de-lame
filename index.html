@@ -154,9 +154,8 @@ body{background:#e8f4ff;color:#143d78}
 .hero-main{position:relative;isolation:isolate;overflow:hidden;padding:0;min-height:500px;background:linear-gradient(130deg,#d3eaff 0%,#e8f5ff 50%,#c6e4ff 100%);border-bottom:1px solid #b9d8f6}
 .hero-main:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.92),transparent 40%),radial-gradient(ellipse at 85% 50%,rgba(111,180,236,.24),transparent 44%),linear-gradient(180deg,#eaf5ff,#b8ddff)}
 .hero-main:after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;z-index:-1;background:linear-gradient(180deg,transparent,rgba(81,163,220,.2));border-radius:50% 50% 0 0}
-.hero-scene-images{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.scene-stones{position:absolute;left:0;top:24%;width:130px;height:190px;object-fit:cover;object-position:left center;opacity:.95}
-.scene-lotus{position:absolute;left:0;bottom:0;width:min(56vw,780px);height:145px;object-fit:cover;object-position:left bottom;opacity:.95}
+.hero-scene-images{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.scene-nenuphar{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:.48}
 .hero-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.82fr);gap:30px;align-items:center;max-width:1450px;min-height:500px;margin:0 auto;padding:36px clamp(22px,5vw,72px) 140px}
 .hero-copy{text-align:center;max-width:760px;margin:0 auto}
 .hero-quote{margin:0;color:#153f8b;font:italic 500 clamp(2rem,4.3vw,3.8rem)/1.18 "Cormorant Garamond",Georgia,serif}
@@ -454,7 +453,7 @@ body{background:#e8f4ff;color:#143d78}
 <body>
   <header class="brand-header">
     <a class="brand-mark" href="index.html" aria-label="Guérisseur de l’Âme — Accueil">
-      <img data-reference-image="brand" alt="Logo R — Rodolphe Torres Tirado">
+      <img src="logos.JPG" alt="Logo Guérisseur de l’Âme — Rodolphe Torres Tirado">
     </a>
     <div class="brand-heading">
       <h1>Guérisseur de l’Âme</h1>
@@ -477,8 +476,7 @@ body{background:#e8f4ff;color:#143d78}
   <main>
     <section class="hero-main" aria-labelledby="accueil-titre">
       <div class="hero-scene-images" aria-hidden="true">
-        <img class="scene-stones" data-reference-image="stones" alt="">
-        <img class="scene-lotus" data-reference-image="lotus" alt="">
+        <img class="scene-nenuphar" src="Ne%CC%81nuphar%2C%20gue%CC%81risseur%20de%20l%E2%80%99a%CC%82me.PNG" alt="">
       </div>
       <div class="hero-content">
         <div class="hero-copy">
