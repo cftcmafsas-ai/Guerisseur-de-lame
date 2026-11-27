@@ -36,7 +36,7 @@
 <body>
 
 <header class="top">
-  <a href="/index.html"><img src="/logos.JPG" alt="Logo R"></a>
+  <a href="/index.html"><img src="/logo.svg" alt="Logo Rodolphe Torres Tirado"></a>
   <nav>
     <a href="/index.html">Accueil</a>
     <a href="/pierres-pendules.html">Pierres &amp; Pendules</a>
@@ -51,7 +51,7 @@
 <section class="hero">
   <p class="en-construction" style="font-size:1.05rem;font-weight:600;color:#3f5566;margin:0 0 .4em">Site en construction, mais vous pouvez quand même consulter tous mes sites</p>
   <h1>Guérisseur de l’Âme</h1>
-  <img class="herologo" src="/rodolphe.JPG" alt="Rodolphe Torres Tirado">
+  <img class="herologo" src="/rodolphe-logo.svg" alt="Rodolphe Torres Tirado">
   <h2 class="hero-sous-titre" style="font-size:clamp(1.5rem,4.5vw,2.1rem);margin:.3em 0 .2em">Accompagnement spirituel et bien-être</h2>
   <div class="lotus">❀</div>
   <p class="lead">Un temps d’écoute et de partage pour votre cheminement personnel et spirituel</p>
@@ -71,33 +71,20 @@
   <p class="closing">Ensemble, cheminons vers un mieux-être durable</p>
 </section>
 
-<section id="music-integration" class="music-integration" aria-labelledby="music-integration-title">
-  <style>
-    .music-integration{max-width:980px;margin:32px auto;padding:0 20px}
-    .music-integration-card{background:#f1f7fc;border:1px solid #d5e5f1;border-radius:24px;padding:24px;color:#405464}
-    .music-integration-card h2{font:600 clamp(24px,4vw,32px)/1.2 Inter,system-ui,sans-serif;margin:0 0 8px}
-    .music-integration-card p{color:#607586;line-height:1.6}
-    .music-integration-frame{display:block;width:100%;height:760px;border:1px solid #d5e5f1;border-radius:16px;background:#fff}
-    .music-integration-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:18px 0 4px}
-    .music-integration-link{display:inline-block;background:#c9e0f2;color:#344b5c;text-decoration:none;font:600 15px Inter,system-ui,sans-serif;padding:12px 22px;border-radius:999px}
-    .music-integration-link:hover{filter:brightness(.97)}
-    @media(max-width:640px){.music-integration{padding:0 14px}.music-integration-card{padding:16px}.music-integration-frame{height:680px}}
-  </style>
-  <div class="music-integration-card">
-    <h2 id="music-integration-title">Mon Espace Musique</h2>
-    <p>Retrouvez mon espace d’écoute et découvrez mes morceaux.</p>
-    <iframe class="music-integration-frame"
-      src="https://mon-espace-musique.rodolphetorres.workers.dev/"
-      title="Site Mon Espace Musique"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="autoplay; clipboard-write"></iframe>
-    <p class="small">Si votre bibliothèque personnelle ne s’affiche pas dans ce cadre, ouvrez Mon Espace Musique directement : le navigateur peut isoler le stockage lorsqu’une application est intégrée à un autre site.</p>
-    <div class="music-integration-actions">
-      <a class="music-integration-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener">Ouvrir Mon Espace Musique</a>
-    </div>
-  </div>
-</section>
+
+
+
+<!-- Lecteur musical en fenêtre pop-up : le contenu du site reste inchangé. -->
+<button id="music-open" class="music-float" type="button" aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal"><span aria-hidden="true">♫</span></button>
+<div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
+  <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
+  <section class="music-modal-card">
+    <header class="music-modal-head"><h2 id="music-modal-title"><span aria-hidden="true">♫</span> Mon Espace Musique</h2><button class="music-close" type="button" data-music-close aria-label="Fermer">×</button></header>
+    <p class="music-modal-subtitle">Écoutez et découvrez ma musique</p>
+    <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write"></iframe>
+    <div class="music-modal-footer"><a class="music-modal-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Ouvrir Mon Espace Musique ↗</a></div>
+  </section>
+</div>
 
 <section class="duo" aria-label="Mes autres sites">
   <div class="duo-card">
@@ -141,6 +128,10 @@
   <p>Guérisseur de l’Âme · <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a> · <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></p>
 </footer>
 
+
+<script>
+(function(){var modal=document.getElementById('music-modal'),open=document.getElementById('music-open'),closeButtons=modal.querySelectorAll('[data-music-close]'),lastFocus=null;function show(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();}function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');open.setAttribute('aria-expanded','false');if(lastFocus)lastFocus.focus();}open.addEventListener('click',show);closeButtons.forEach(function(b){b.addEventListener('click',hide);});document.addEventListener('keydown',function(e){if(!modal.hidden&&e.key==='Escape')hide();});})();
+</script>
 <script src="/app.js"></script>
 <script src="/pastel-theme.js"></script></body>
 </html>
