@@ -35,6 +35,7 @@
     "#pastel-theme-panel .pt-colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}"+
     "#pastel-theme-panel button{display:flex;align-items:center;gap:7px;width:100%;padding:8px;border:1px solid var(--site-border);border-radius:11px;background:var(--site-soft);color:var(--site-text);font:12px system-ui,sans-serif;cursor:pointer}"+
     "#pastel-theme-panel button[aria-pressed=true]{outline:2px solid var(--site-text);outline-offset:1px}"+
+    "#pastel-theme-panel .pt-original{grid-column:1/-1;justify-content:center;font-weight:700;background:linear-gradient(135deg,#eaf3fa,#d6e8f6)!important;border:1px solid #b9d6ee!important;color:#435d73!important}"+
     "#pastel-theme-panel i{display:block;width:19px;height:19px;flex:none;border-radius:50%;border:1px solid rgba(0,0,0,.08)}"+
     "#pastel-theme-toggle{position:fixed;right:88px;bottom:88px;z-index:11001;display:grid;place-items:center;width:58px;height:58px;padding:0;border:2px solid #fff;border-radius:50%;background:linear-gradient(145deg,#f3d9e8,#d9b8d2);color:#65465f;font-size:30px;line-height:1;box-shadow:0 7px 22px rgba(90,65,90,.22);cursor:pointer}"+
     "#pastel-theme-panel[hidden]{display:none!important}"+
@@ -58,6 +59,8 @@
     close.setAttribute("aria-label","Fermer les couleurs");
     close.addEventListener("click",function(){panel.hidden=true;});
     var title=document.createElement("p");title.className="pt-title";title.textContent="Choisissez votre ambiance";
+    var original=document.createElement("button");original.type="button";original.className="pt-original";original.textContent="↺ Revenir à la couleur d’origine";original.setAttribute("aria-label","Revenir à la couleur d’origine");original.addEventListener("click",function(){apply("ciel");});
+    panel.appendChild(close);panel.appendChild(title);panel.appendChild(original);
     var grid=document.createElement("div");grid.className="pt-colors";
     palettes.forEach(function(p){
       var b=document.createElement("button");b.type="button";b.dataset.theme=p.id;b.setAttribute("aria-label",p.name);
@@ -66,14 +69,14 @@
       b.appendChild(dot);b.appendChild(label);b.addEventListener("click",function(){apply(p.id);});
       grid.appendChild(b);
     });
-    panel.appendChild(close);panel.appendChild(title);panel.appendChild(grid);document.body.appendChild(panel);
+    panel.appendChild(grid);document.body.appendChild(panel);
   }
   var toggle=document.getElementById("pastel-theme-toggle");
   if(!toggle){
     toggle=document.createElement("button");toggle.id="pastel-theme-toggle";toggle.type="button";
     toggle.textContent="🎨";toggle.setAttribute("aria-label","Ouvrir les couleurs");toggle.setAttribute("title","Changer les couleurs");document.body.appendChild(toggle);
   }
-  toggle.addEventListener("click",function(){if(panel.hidden){apply("ciel");panel.hidden=false;}else{panel.hidden=true;}});
+  toggle.addEventListener("click",function(){panel.hidden=!panel.hidden;});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")panel.hidden=true;});
   apply(current);
 })();
