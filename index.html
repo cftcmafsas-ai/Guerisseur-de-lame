@@ -71,6 +71,34 @@
   <p class="closing">Ensemble, cheminons vers un mieux-être durable</p>
 </section>
 
+<section id="music-integration" class="music-integration" aria-labelledby="music-integration-title">
+  <style>
+    .music-integration{max-width:980px;margin:32px auto;padding:0 20px}
+    .music-integration-card{background:#f1f7fc;border:1px solid #d5e5f1;border-radius:24px;padding:24px;color:#405464}
+    .music-integration-card h2{font:600 clamp(24px,4vw,32px)/1.2 Inter,system-ui,sans-serif;margin:0 0 8px}
+    .music-integration-card p{color:#607586;line-height:1.6}
+    .music-integration-frame{display:block;width:100%;height:760px;border:1px solid #d5e5f1;border-radius:16px;background:#fff}
+    .music-integration-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:18px 0 4px}
+    .music-integration-link{display:inline-block;background:#c9e0f2;color:#344b5c;text-decoration:none;font:600 15px Inter,system-ui,sans-serif;padding:12px 22px;border-radius:999px}
+    .music-integration-link:hover{filter:brightness(.97)}
+    @media(max-width:640px){.music-integration{padding:0 14px}.music-integration-card{padding:16px}.music-integration-frame{height:680px}}
+  </style>
+  <div class="music-integration-card">
+    <h2 id="music-integration-title">Mon Espace Musique</h2>
+    <p>Retrouvez mon espace d’écoute et découvrez mes morceaux.</p>
+    <iframe class="music-integration-frame"
+      src="https://mon-espace-musique-application.vercel.app/"
+      title="Lecteur Mon Espace Musique"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; clipboard-write"></iframe>
+    <p class="small">Si votre bibliothèque personnelle ne s’affiche pas dans ce cadre, ouvrez Mon Espace Musique directement : le navigateur peut isoler le stockage lorsqu’une application est intégrée à un autre site.</p>
+    <div class="music-integration-actions">
+      <a class="music-integration-link" href="https://mon-espace-musique-application.vercel.app/" target="_blank" rel="noopener">Ouvrir Mon Espace Musique</a>
+    </div>
+  </div>
+</section>
+
 <section class="duo" aria-label="Mes autres sites">
   <div class="duo-card">
     <h2>Mes autres sites</h2>
