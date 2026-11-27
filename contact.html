@@ -8,6 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+<style>
+.contact-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:780px;margin:28px auto}
+.contact-method-card{display:flex;align-items:center;gap:14px;min-width:0;padding:20px;text-align:left;border:1px solid #d8e7f2;border-radius:20px;background:#fff;color:#294f70;text-decoration:none;box-shadow:0 6px 20px rgba(38,85,122,.06);transition:transform .18s ease,border-color .18s ease}
+.contact-method-card:hover{transform:translateY(-2px);border-color:#9fc8e7}
+.contact-method-avatar{display:grid;place-items:center;flex:0 0 50px;width:50px;height:50px;border-radius:15px;background:#e6f1fa;color:#2786bd;font-size:25px}
+.contact-method-copy{display:flex;flex-direction:column;gap:5px;min-width:0;overflow-wrap:anywhere}
+.contact-method-copy strong{color:#16477f;font:650 1.08rem/1.2 "DM Sans",system-ui,sans-serif}
+.contact-method-copy small{color:#68839a;font-size:.88rem}
+.contact-method-copy>span{color:#2585bd;font-size:.88rem;font-weight:650}
+@media(max-width:560px){.contact-method-grid{grid-template-columns:1fr;margin:22px 0}.contact-method-card{padding:16px}}
+</style>
 </head>
 <body>
 
@@ -28,16 +39,15 @@
   <h1>Me contacter</h1>
   <p class="lead">Ensemble, cheminons vers un mieux-être durable</p>
 
-  <div class="card">
-    <h3>WhatsApp uniquement</h3>
-    <p>07 69 73 73 56</p>
-    <p><a class="btn" href="https://wa.me/33769737356">Écrire sur WhatsApp ›</a></p>
-  </div>
-
-  <div class="card">
-    <h3>E-mail</h3>
-    <p>rodolphetorres@outlook.fr</p>
-    <p><a class="btn" href="mailto:rodolphetorres@outlook.fr">Envoyer un e-mail ›</a></p>
+  <div class="contact-method-grid">
+    <a class="contact-method-card" href="https://wa.me/33769737356" target="_blank" rel="noopener noreferrer">
+      <span class="contact-method-avatar" aria-hidden="true">◉</span>
+      <span class="contact-method-copy"><strong>WhatsApp uniquement</strong><small>07 69 73 73 56</small><span>Écrire sur WhatsApp →</span></span>
+    </a>
+    <a class="contact-method-card" href="mailto:rodolphetorres@outlook.fr">
+      <span class="contact-method-avatar" aria-hidden="true">✉</span>
+      <span class="contact-method-copy"><strong>E-mail</strong><small>rodolphetorres@outlook.fr</small><span>Envoyer un e-mail →</span></span>
+    </a>
   </div>
 </main>
 
