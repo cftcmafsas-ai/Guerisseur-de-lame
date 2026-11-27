@@ -80,3 +80,47 @@ footer{background:rgba(246,251,255,.94);border-color:#d5e8f6}
 .music-modal-link:hover{background:#b9dcf5}
 body.music-modal-open{overflow:hidden}
 @media(max-width:700px){.top{align-items:flex-start;flex-direction:column;gap:8px}.top img{height:42px}.top nav{width:100%;padding-bottom:3px}.top nav a{padding:7px 12px;font-size:13px}.hero{padding:30px 14px 40px}.music-float{right:14px;bottom:78px;width:56px;height:56px}.music-modal{padding:10px}.music-modal-card{padding:14px;border-radius:20px}.music-modal-frame{height:62vh;min-height:300px}.music-modal-head h2{font-size:1.35rem}}
+
+/* Recomposition fidèle à la maquette d’origine : lotus, accueil à gauche, nom intégré au logo. */
+.top{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;padding:10px clamp(14px,3vw,42px);background:#f8fcff;border-bottom:1px solid #cfe4f6;box-shadow:none}
+.top .brand-lockup{display:block;flex:0 0 auto;line-height:0}
+.top .brand-lockup img{display:block;width:clamp(210px,23vw,300px);height:auto;max-width:100%;object-fit:contain}
+.top nav{flex:1;justify-content:flex-end;gap:8px;overflow-x:auto}
+.top nav a{padding:9px 16px;border:1px solid #d5e7f7;background:#f3f8ff;color:#143f77;font-family:"Cormorant Garamond",Georgia,serif;font-size:16px;box-shadow:0 2px 6px rgba(49,104,161,.08)}
+.top nav a:first-child{background:#3996df;color:#fff;border-color:#3996df}
+.hero-main{position:relative;isolation:isolate;overflow:hidden;padding:0 0 34px;background:#eaf6ff;border-bottom:1px solid #c6e2f5;text-align:center}
+.hero-scenery{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero-scenery img{width:100%;height:100%;object-fit:cover;object-position:center 45%;opacity:.94}
+.hero-title{position:relative;padding:14px 18px 0;background:linear-gradient(180deg,rgba(248,252,255,.92),rgba(248,252,255,.12))}
+.hero-title h1{margin:0;color:#153e77;font:500 clamp(2.6rem,6.5vw,5.1rem)/1.08 "Cormorant Garamond",Georgia,serif;letter-spacing:-.02em}
+.hero-title .hero-sous-titre{margin:8px 0 0;color:#143f77;font:italic 500 clamp(1.25rem,3vw,2.1rem)/1.3 "Cormorant Garamond",Georgia,serif}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;align-items:start;max-width:1480px;margin:0 auto;padding:0 clamp(20px,4vw,60px)}
+.welcome-panel{padding:clamp(20px,3.8vw,54px) 0 0;text-align:left}
+.welcome-panel h2{display:flex;align-items:center;gap:14px;margin:0 0 8px;color:#153f7c;font:500 clamp(2.5rem,5vw,4.2rem)/1.1 "Cormorant Garamond",Georgia,serif}
+.welcome-lotus{font-size:.72em;color:#3d9bdb}
+.welcome-panel>p{margin:0 0 22px;color:#143f77;font:italic 500 clamp(1.25rem,2.6vw,2rem)/1.35 "Cormorant Garamond",Georgia,serif}
+.service-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.service-card{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px 8px;border:1px solid #9dcaf3;border-radius:20px;background:rgba(250,253,255,.86);color:#153f7c;text-align:center;text-decoration:none;font:500 clamp(1rem,1.8vw,1.45rem)/1.15 "Cormorant Garamond",Georgia,serif;box-shadow:none}
+.service-card:hover{background:#fff;border-color:#5ba9e8}
+.service-symbol{display:flex;align-items:center;justify-content:center;width:78px;height:78px;color:#168cc8;font-size:3.3rem;line-height:1}
+.yin-symbol{color:#174c9c}.chakra-symbol{color:#267fce}.spiral-symbol{color:#349bd5;font-size:4rem}
+.hero-extra-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.hero-extra-links a{padding:6px 14px;border:1px solid #b7d9f3;border-radius:999px;background:rgba(255,255,255,.8);color:#174e8a;text-decoration:none;font-size:14px}
+.hero-quote{padding:clamp(32px,8vw,110px) 0 0;text-align:right}
+.hero-quote p{margin:0;color:#153f77;font:italic 500 clamp(1.7rem,3.5vw,3rem)/1.25 "Cormorant Garamond",Georgia,serif}
+.hero-main .contactbar{margin-top:24px;background:rgba(252,254,255,.88);border-color:#b9d8f1;box-shadow:none}
+.hero-main .closing{margin:22px 18px 0;color:#174e8a;font:italic 500 clamp(1.25rem,3vw,2.2rem)/1.25 "Cormorant Garamond",Georgia,serif}
+.music-modal-card{width:min(650px,100%);padding:0;overflow:hidden;border:1px solid #9dcaf3;border-radius:24px;background:#f8fcff;box-shadow:0 18px 48px rgba(32,87,143,.22)}
+.music-modal-head{padding:14px 20px;background:#e0efff;border:0}
+.music-modal-head h2{color:#1264bc;font-size:clamp(1.45rem,4vw,2.2rem)}
+.music-close{background:#1559a3;width:40px;height:40px}
+.music-popup-intro{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;margin:14px 18px;padding:0;background:#fff;border-radius:16px}
+.music-popup-intro img{display:block;width:150px;height:150px;object-fit:cover;border-radius:6px}
+.music-popup-intro p{margin:0;padding:12px;color:#153f77;text-align:center;font:italic 500 clamp(1.25rem,3vw,2rem)/1.25 "Cormorant Garamond",Georgia,serif}
+.music-modal-frame{width:calc(100% - 36px);height:250px;min-height:220px;margin:0 18px;border:0;border-radius:12px;background:#fff}
+.music-modal-slogan{margin:14px 20px 0;padding:12px 0;border-top:1px solid #c6e2f5;border-bottom:1px solid #c6e2f5;color:#153f77;text-align:center;font:italic 500 1.25rem "Cormorant Garamond",Georgia,serif}
+.music-modal-slogan span{display:block;margin-top:5px;color:#3c9bdb;font-size:1.6rem}
+.music-modal-footer{padding:14px}
+.music-modal-link{padding:9px 22px;background:#fff;border-color:#4b9fe0;color:#1559a3;cursor:pointer}
+@media(max-width:900px){.top{align-items:flex-start;flex-direction:column;gap:8px}.top .brand-lockup img{width:min(260px,80vw)}.top nav{width:100%;justify-content:flex-start}.hero-layout{grid-template-columns:1fr;gap:0}.welcome-panel{padding-top:22px}.hero-quote{padding:20px 0 0;text-align:center}.hero-quote p br{display:none}.service-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.service-card{min-height:125px}.hero-scenery img{object-position:30% center}}
+@media(max-width:520px){.hero-title{padding-top:20px}.hero-title h1{font-size:2.6rem}.hero-title .hero-sous-titre{font-size:1.35rem}.hero-layout{padding:0 15px}.welcome-panel h2{font-size:2.7rem}.welcome-panel>p{font-size:1.35rem}.service-symbol{width:58px;height:58px;font-size:2.6rem}.service-card{min-height:112px;border-radius:15px}.hero-quote p{font-size:1.65rem}.music-modal{padding:8px}.music-modal-card{border-radius:18px}.music-modal-head{padding:12px}.music-popup-intro{grid-template-columns:94px 1fr;gap:8px;margin:10px}.music-popup-intro img{width:94px;height:94px}.music-popup-intro p{font-size:1.18rem;padding:6px}.music-modal-frame{width:calc(100% - 20px);height:220px;min-height:180px;margin:0 10px}.music-modal-slogan{font-size:1.05rem;margin:10px 12px 0}}
