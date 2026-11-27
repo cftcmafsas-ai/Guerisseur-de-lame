@@ -357,6 +357,29 @@ body{background:#e8f4ff;color:#143d78}
 @media(max-width:900px){.service-section{grid-template-columns:repeat(2,minmax(0,1fr))!important}.home-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.service-section{grid-template-columns:1fr!important;gap:10px!important;padding:18px 14px!important}.service-section .service-card{min-height:88px!important;padding:13px!important;border-radius:16px!important}.service-section .service-icon{flex-basis:46px!important;width:46px!important;height:46px!important;min-width:46px!important}.service-section .service-title{font-size:1.13rem!important}.service-section .service-description{font-size:.83rem!important}.home-contact{margin:18px 12px;padding:22px 14px}.home-contact-grid{grid-template-columns:1fr}.home-contact-card{padding:14px}}
 @media(prefers-reduced-motion:reduce){.service-section .service-card,.home-contact-card{transition:none!important}}
+
+/* Présentation verticale demandée : pictogramme au-dessus, intitulé en dessous. */
+.service-section{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+.service-section .service-card{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;min-height:174px!important;padding:20px 12px 18px!important;text-align:center!important}
+.service-section .service-icon{display:grid!important;place-items:center!important;flex:0 0 54px!important;width:54px!important;height:54px!important;min-width:54px!important;margin:0 auto!important}
+.service-section .service-icon svg{display:block!important;width:48px!important;height:48px!important}
+.service-section .service-card-content{display:flex!important;flex:0 1 auto!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:5px!important;width:100%!important;min-width:0!important;text-align:center!important}
+.service-section .service-title{display:block!important;width:100%!important;text-align:center!important;font-size:clamp(1.05rem,1.5vw,1.35rem)!important;line-height:1.18!important}
+.service-section .service-description{display:block!important;width:100%!important;text-align:center!important;font-size:clamp(.82rem,1vw,.98rem)!important;line-height:1.25!important}
+@media(max-width:700px){.service-section{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.service-section .service-card{min-height:160px!important;padding:16px 9px!important;gap:8px!important}.service-section .service-icon{flex-basis:48px!important;width:48px!important;height:48px!important;min-width:48px!important}.service-section .service-icon svg{width:44px!important;height:44px!important}.service-section .service-title{font-size:1.02rem!important}.service-section .service-description{font-size:.79rem!important}}
+@media(max-width:360px){.service-section{gap:8px!important}.service-section .service-card{padding:14px 6px!important}.service-section .service-title{font-size:.95rem!important}}
+/* Accès musique : un bouton dans le menu ouvre une vraie fenêtre modale fermable. */
+.top nav #music-open{display:inline-flex!important;align-items:center;justify-content:center;gap:7px;padding:9px 15px!important;border:1px solid #a9d2f0!important;border-radius:999px!important;background:linear-gradient(145deg,#eaf6ff,#d7ecfc)!important;color:#19558c!important;font-weight:650!important;text-decoration:none!important;white-space:nowrap;cursor:pointer}
+.top nav #music-open:hover{background:#c8e5fa!important;border-color:#79b9e8!important}
+.music-modal[hidden]{display:none!important}
+.music-modal{position:fixed!important;inset:0!important;z-index:10020!important;display:grid!important;place-items:center!important;padding:14px!important}
+.music-modal-card{position:relative!important;z-index:2!important;width:min(760px,100%)!important;max-height:92dvh!important;overflow:auto!important;padding:0!important;border:1px solid #a8d1f6!important;border-radius:24px!important;background:#f8fcff!important;box-shadow:0 20px 60px rgba(20,77,142,.3)!important}
+.music-modal-head{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 18px!important;background:linear-gradient(90deg,#dceeff,#f3f9ff)!important;border-bottom:1px solid #c6e2fb!important}
+.music-modal-frame{display:block!important;width:100%!important;height:min(68dvh,650px)!important;min-height:380px!important;border:0!important;border-radius:0!important;background:#fff!important}
+.music-close{display:grid!important;place-items:center!important;flex:0 0 42px!important;width:42px!important;height:42px!important;border:0!important;border-radius:50%!important;background:#77b7e9!important;color:#fff!important;font-size:30px!important;line-height:1!important;cursor:pointer!important}
+.music-backdrop{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important;background:rgba(35,67,100,.5)!important;cursor:pointer!important}
+@media(max-width:600px){.music-modal{padding:8px!important}.music-modal-card{max-height:94dvh!important;border-radius:18px!important}.music-modal-frame{height:68dvh!important;min-height:340px!important}.top nav #music-open{padding:8px 12px!important}}
+
 </style>
 </head>
 <body>
@@ -479,6 +502,7 @@ body{background:#e8f4ff;color:#143d78}
       function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');if(open)open.setAttribute('aria-expanded','false');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
       if(open)open.addEventListener('click',function(event){event.preventDefault();window.showMusic();});
       modal.querySelectorAll('[data-music-close]').forEach(function(button){button.addEventListener('click',hide);});
+      modal.addEventListener('click',function(event){if(event.target===modal)hide();});
       document.addEventListener('keydown',function(event){if(!modal.hidden&&event.key==='Escape')hide();});
     })();
   </script>
