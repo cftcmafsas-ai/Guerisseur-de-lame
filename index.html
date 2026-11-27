@@ -1,148 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Rodolphe — Accompagnement spirituel et bien-être</title>
-  <meta name="description" content="Rodolphe vous présente sa démarche d’écoute, de bien-être et de spiritualité. Découvrez ses valeurs et les moyens de le contacter.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-
-  <style>
-    .duo{max-width:760px;margin:26px auto;padding:0 20px}
-    .duo-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.8);border-radius:24px;box-shadow:0 14px 34px rgba(43,65,95,.10);padding:26px;text-align:center}
-    .duo-card h2{margin:0 0 8px;font:600 24px/1.2 Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
-    .duo-card p{margin:0 0 18px;color:var(--mu,#7a8c9a);font-size:16px;line-height:1.6}
-    .duo-list{display:flex;flex-direction:column;gap:18px}
-    .duo-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 0 18px;border-bottom:1px solid var(--bd,#dde8f0)}
-    .duo-item:last-child{border-bottom:0;padding-bottom:0}
-    .duo-item b{font:600 18px Inter,system-ui,sans-serif;color:var(--tx,#46535e)}
-    .duo-item span{font-size:14px;color:var(--mu,#7a8c9a);max-width:520px}
-    .duo-btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--p3,#b9d6ee);color:var(--dk,#3a4955);font:600 15px Inter,system-ui,sans-serif;text-decoration:none}
-    .duo-btn:hover{filter:brightness(.96)}
-    @media(max-width:640px){.duo{padding:0 14px}.duo-card{padding:20px}}
-    #contact-accueil .contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
-    #contact-accueil label{display:block;font-size:15px;font-weight:500}
-    #contact-accueil input,#contact-accueil textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit}
-    #contact-accueil .contact-full{grid-column:1/-1}
-    #contact-accueil textarea{resize:vertical}
-    #contact-accueil .btn{border:0;font-family:inherit}
-    #contact-accueil .contact-note{font-size:13px;color:var(--mu)}
-    @media(max-width:640px){#contact-accueil .contact-fields{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guérisseur de l’Âme — Rodolphe Torres Tirado</title>
+<meta name="description" content="Accompagnement spirituel et bien-être — Rodolphe Torres Tirado">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#dceeff}body{font-family:Georgia,serif}
+.reference-page{position:relative;width:100%;max-width:1536px;margin:0 auto;line-height:0}
+.reference-page>img{display:block;width:100%;height:auto}
+.hotspot{position:absolute;display:block;z-index:2;background:transparent;border:0;text-decoration:none;cursor:pointer;line-height:normal}
+.hotspot:focus-visible{outline:3px solid #167bd0;outline-offset:2px;border-radius:12px}
+.brand{left:4.3%;top:1.5%;width:17%;height:20%}
+.nav-home{left:6.8%;top:24.7%;width:13.2%;height:6.1%}
+.nav-stones{left:21.7%;top:24.7%;width:18.4%;height:6.1%}
+.nav-family{left:40.3%;top:24.7%;width:16.5%;height:6.1%}
+.nav-gifts{left:57.2%;top:24.7%;width:12.5%;height:6.1%}
+.nav-about{left:70%;top:24.7%;width:10.4%;height:6.1%}
+.nav-contact{left:81%;top:24.7%;width:10.2%;height:6.1%}
+.learn{left:19.2%;top:63.2%;width:18.4%;height:6.3%}
+.music-float{left:93.7%;top:33.4%;width:5.4%;height:7.7%;border-radius:50%}
+.music-panel{left:50.5%;top:35.8%;width:41.5%;height:42%}
+.music-open-link{left:60.5%;top:71.4%;width:29%;height:7%}
+.card-energy{left:2.2%;top:84.7%;width:23%;height:15%}
+.card-magnet{left:26.3%;top:84.7%;width:23%;height:15%}
+.card-chakras{left:50.6%;top:84.7%;width:22.8%;height:15%}
+.card-release{left:74.1%;top:84.7%;width:24%;height:15%}
+.modal{position:fixed;inset:0;z-index:20;background:rgba(9,35,78,.58);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal-card{position:relative;width:min(100%,980px);height:min(88vh,760px);background:#fff;border:1px solid #b8d7f3;border-radius:20px;overflow:hidden;box-shadow:0 20px 70px #082c5a66}
+.modal-card iframe{width:100%;height:100%;border:0}
+.modal-close{position:absolute;right:10px;top:10px;z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:#2f8bd5;color:#fff;font-size:28px;cursor:pointer;box-shadow:0 2px 8px #123c6c55}
+@media(max-width:600px){.modal{padding:8px}.modal-card{height:92vh;border-radius:14px}}
+</style>
 </head>
 <body>
-
-<header class="brand-header">
-  <a class="brand-mark" href="index.html"><img src="rodolphe-logo.svg" alt="Rodolphe Torres Tirado"></a>
-  <div class="brand-heading"><h1>Guérisseur de l’Âme</h1><p>Accompagnement spirituel et bien-être</p></div>
-  <img class="brand-lotus" data-reference-image="lotus" alt="Lotus sur l’eau">
-</header>
-<nav class="site-nav" aria-label="Navigation principale">
-  <a class="active" href="index.html">⌂　Accueil</a>
-  <a href="pierres-pendules.html">Pierres &amp; Pendules</a>
-  <a href="familles-ame.html">Familles d’Âme</a>
-  <a href="dons.html">Les Dons</a>
-  <a href="a-propos.html">À propos</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<section class="hero-main">
-  <div class="hero-scene-images" aria-hidden="true"><img class="scene-stones" data-reference-image="stones" alt=""><img class="scene-lotus" data-reference-image="lotus" alt=""></div>
-  <div class="hero-content">
-    <div class="hero-copy">
-      <p class="hero-quote">« Un chemin vers la sérénité,<br>l’harmonie et la lumière intérieure »</p>
-      <div class="quote-underline"></div>
-      <p class="hero-description">Je vous accompagne dans votre cheminement spirituel<br>pour retrouver équilibre, énergie et bien-être.</p>
-      <a class="hero-learn" href="a-propos.html"><span aria-hidden="true">❀</span> En savoir plus　→</a>
-    </div>
-    <section class="hero-player" aria-label="Lecteur Mon Espace Musique">
-      <header class="hero-player-head"><span class="hero-player-note">♫</span><h2>Mon Espace Musique</h2><button type="button" class="hero-player-close" aria-label="Ouvrir le lecteur" onclick="document.getElementById('music-open').click()">×</button></header>
-      <p class="hero-player-subtitle">Écoutez et découvrez ma musique</p>
-      <div class="hero-player-track">
-        <img data-reference-image="album" alt="Illustration de Sérénité Intérieure">
-        <div class="hero-player-details"><h3>Sérénité Intérieure</h3><p>Rodolphe Torres Tirado</p><div class="hero-player-progress"><span></span></div><div class="hero-player-time"><span>00:00</span><span>04:32</span></div>
-          <div class="hero-player-controls"><button type="button" aria-label="Volume" onclick="document.getElementById('music-open').click()">◖))</button><button type="button" aria-label="Précédent" onclick="document.getElementById('music-open').click()">|◀</button><button type="button" class="hero-player-play" aria-label="Lire" onclick="document.getElementById('music-open').click()">▶</button><button type="button" aria-label="Suivant" onclick="document.getElementById('music-open').click()">▶|</button><button type="button" aria-label="Liste" onclick="document.getElementById('music-open').click()">☷</button></div>
-        </div>
-      </div>
-      <a class="hero-player-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">♧　Ouvrir Mon Espace Musique ↗</a>
-    </section>
-  </div>
-</section>
-<section class="service-section" aria-label="Mes accompagnements">
-  <a class="service-card" href="energeticien.html"><span class="service-icon">❀</span><span class="service-title">Énergéticien</span><span class="service-description">Retrouvez votre énergie</span></a>
-  <a class="service-card" href="magnetiseur.html"><span class="service-icon">♧</span><span class="service-title">Magnétiseur</span><span class="service-description">Harmonisez vos énergies</span></a>
-  <a class="service-card" href="chakras.html"><span class="service-icon">☯</span><span class="service-title">Chakras</span><span class="service-description">Équilibrez vos centres</span></a>
-  <a class="service-card" href="liberation.html"><span class="service-icon heart-icon">♡</span><span class="service-title">Libération des blocages</span><span class="service-description">Avancez sur votre chemin</span></a>
-</section>
-
-
-
-
-<!-- Lecteur musical dans une fenêtre pop-up ouverte par l’icône flottante -->
-<button id="music-open" class="music-float" type="button" aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal"><span aria-hidden="true">♫</span></button>
-<div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
-  <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
-  <section class="music-modal-card">
-    <header class="music-modal-head"><h2 id="music-modal-title"><span aria-hidden="true">♫</span> Mon Espace Musique</h2><button class="music-close" type="button" data-music-close aria-label="Fermer">×</button></header>
-    <p class="music-modal-subtitle">Écoutez et découvrez ma musique</p>
-    <div class="music-track-preview"><img data-reference-image="album" alt="Illustration de sérénité intérieure"><div><h3>Sérénité Intérieure</h3><p>Rodolphe Torres Tirado</p><div class="track-line"><span></span></div><div class="track-time"><span>00:00</span><span>04:32</span></div></div></div>
-    <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write"></iframe>
-    <div class="music-modal-footer"><a class="music-modal-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">♧　Ouvrir Mon Espace Musique ↗</a></div>
-  </section>
+<main class="reference-page" aria-label="Page d’accueil Guérisseur de l’Âme">
+<img src="assets/reference-home.webp" alt="Page d’accueil Guérisseur de l’Âme, reproduisant la maquette de référence bleue avec logo, lotus, paysage aquatique, lecteur musical et cartes de services">
+<a class="hotspot brand" href="index.html" aria-label="Accueil"></a>
+<a class="hotspot nav-home" href="index.html" aria-label="Accueil"></a>
+<a class="hotspot nav-stones" href="pierres-pendules.html" aria-label="Pierres et Pendules"></a>
+<a class="hotspot nav-family" href="familles-ame.html" aria-label="Familles d’Âme"></a>
+<a class="hotspot nav-gifts" href="dons.html" aria-label="Les Dons"></a>
+<a class="hotspot nav-about" href="a-propos.html" aria-label="À propos"></a>
+<a class="hotspot nav-contact" href="contact.html" aria-label="Contact"></a>
+<a class="hotspot learn" href="a-propos.html" aria-label="En savoir plus"></a>
+<button class="hotspot music-float" type="button" aria-label="Ouvrir Mon Espace Musique" onclick="showMusic()"></button>
+<button class="hotspot music-panel" type="button" aria-label="Ouvrir le lecteur musical" onclick="showMusic()"></button>
+<a class="hotspot music-open-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener" aria-label="Ouvrir Mon Espace Musique dans un nouvel onglet"></a>
+<a class="hotspot card-energy" href="energeticien.html" aria-label="Énergéticien"></a>
+<a class="hotspot card-magnet" href="magnetiseur.html" aria-label="Magnétiseur"></a>
+<a class="hotspot card-chakras" href="chakras.html" aria-label="Chakras"></a>
+<a class="hotspot card-release" href="liberation.html" aria-label="Libération des blocages"></a>
+</main>
+<div class="modal" id="musicModal" role="dialog" aria-modal="true" aria-label="Mon Espace Musique" onclick="if(event.target===this)hideMusic()">
+<div class="modal-card"><button class="modal-close" type="button" onclick="hideMusic()" aria-label="Fermer">×</button><iframe src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" allow="autoplay; clipboard-write"></iframe></div>
 </div>
-
-<section class="duo" aria-label="Mes autres sites">
-  <div class="duo-card">
-    <h2>Mes autres sites</h2>
-    <p>Retrouvez mes autres espaces en un clic.</p>
-    <div class="duo-list">
-      <div class="duo-item"><b>Ma Gestion Web</b><span>Présentation de Ma Gestion et accès à l’application.</span><a class="duo-btn" href="https://ma-gestion-web.rodolphetorres.workers.dev/">Accéder</a></div>
-      <div class="duo-item"><b>BLEU PRO</b><span>Espace de présentation et d’accès à l’application.</span><a class="duo-btn" href="https://bleu-pro.rodolphetorres.workers.dev/">Accéder</a></div>
-      <div class="duo-item"><b>Mes Documents</b><span>Espace de documents et ressources.</span><a class="duo-btn" href="https://mes-documents.rodolphetorres.workers.dev/">Accéder</a></div>
-      <div class="duo-item"><b>Espace Créatif</b><span>Écriture, musique et rencontres créatives.</span><a class="duo-btn" href="https://espace-creatif.rodolphetorres.workers.dev/">Accéder</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact-accueil" class="wrap center" aria-labelledby="contact-accueil-titre">
-  <h2 id="contact-accueil-titre">Me contacter</h2>
-  <p class="lead">Ensemble, cheminons vers un mieux-être durable</p>
-  <div class="card">
-    <h3>WhatsApp uniquement</h3>
-    <p>07 69 73 73 56</p>
-    <p><a class="btn" href="https://wa.me/33769737356">Écrire sur WhatsApp ›</a></p>
-  </div>
-  <div class="card">
-    <h3>E-mail</h3>
-    <p>rodolphetorres@outlook.fr</p>
-    <p><a class="btn" href="mailto:rodolphetorres@outlook.fr">Envoyer un e-mail ›</a></p>
-  </div>
-  <form class="card" aria-describedby="contact-accueil-note" onsubmit="event.preventDefault();">
-    <div class="contact-fields">
-      <label for="contact-nom">Nom<input id="contact-nom" name="nom" autocomplete="family-name" required></label>
-      <label for="contact-prenom">Prénom<input id="contact-prenom" name="prenom" autocomplete="given-name" required></label>
-      <label for="contact-email" class="contact-full">Email<input id="contact-email" name="email" type="email" autocomplete="email" required></label>
-      <label for="contact-message" class="contact-full">Message<textarea id="contact-message" name="message" rows="6" required></textarea></label>
-    </div>
-    <p><button class="btn" type="button" disabled aria-describedby="contact-accueil-note">Envoyer</button></p>
-    <p id="contact-accueil-note" class="contact-note">L’envoi par formulaire n’est pas encore activé. Pour me contacter, utilisez WhatsApp ou le lien e-mail ci-dessus.</p>
-  </form>
-</section>
-
-<footer>
-  <p>Guérisseur de l’Âme · <a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a> · <a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></p>
-</footer>
-
-
 <script>
-(function(){var modal=document.getElementById('music-modal'),open=document.getElementById('music-open'),closeButtons=modal.querySelectorAll('[data-music-close]'),lastFocus=null;function show(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();}function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');open.setAttribute('aria-expanded','false');if(lastFocus)lastFocus.focus();}open.addEventListener('click',show);closeButtons.forEach(function(b){b.addEventListener('click',hide);});document.addEventListener('keydown',function(e){if(!modal.hidden&&e.key==='Escape')hide();});})();
+function showMusic(){document.getElementById('musicModal').classList.add('open');document.body.style.overflow='hidden'}
+function hideMusic(){document.getElementById('musicModal').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hideMusic()});
 </script>
-<script>
-(function(){const assets={brand:'assets/reference-logo.b64',lotus:'assets/reference-lotus.b64',stones:'assets/reference-stones.b64',album:'assets/reference-album.b64'};Object.keys(assets).forEach(function(key){fetch(assets[key]).then(function(r){if(!r.ok)throw Error('image asset');return r.text()}).then(function(data){document.querySelectorAll('[data-reference-image="'+key+'"]').forEach(function(el){el.src='data:image/webp;base64,'+data.trim()})}).catch(function(){})})})();
-</script>
-<script src="app.js"></script>
-<script src="pastel-theme.js"></script></body>
+</body>
 </html>
