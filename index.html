@@ -35,51 +35,59 @@
 </head>
 <body>
 
-<header class="top">
-  <a class="brand-lockup" href="index.html"><img src="rodolphe-logo.svg" alt="Rodolphe Torres Tirado — Guérisseur de l’Âme"></a>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="pierres-pendules.html">Pierres &amp; Pendules</a>
-    <a href="familles-ame.html">Familles d’Âme</a>
-    <a href="dons.html">Les Dons</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="temoignages.html">Témoignages</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header class="brand-header">
+  <a class="brand-mark" href="index.html"><img data-reference-image="brand" alt="Logo R — Rodolphe Torres Tirado"></a>
+  <div class="brand-heading"><h1>Guérisseur de l’Âme</h1><p>Accompagnement spirituel et bien-être</p></div>
+  <img class="brand-lotus" data-reference-image="lotus" alt="Lotus sur l’eau">
 </header>
+<nav class="site-nav" aria-label="Navigation principale">
+  <a class="active" href="index.html">⌂　Accueil</a>
+  <a href="pierres-pendules.html">Pierres &amp; Pendules</a>
+  <a href="familles-ame.html">Familles d’Âme</a>
+  <a href="dons.html">Les Dons</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="temoignages.html">Témoignages</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
+<div class="construction-banner">ℹ　Site en construction, mais vous pouvez quand même consulter tous mes sites</div>
 <section class="hero-main">
-  <div class="hero-scenery" aria-hidden="true"><img src="lotus-water.svg" alt=""></div>
-  <div class="hero-title"><h1>Guérisseur de l’Âme</h1><p class="hero-sous-titre">Accompagnement spirituel et bien-être</p></div>
-  <div class="hero-layout">
-    <div class="welcome-panel"><h2><span class="welcome-lotus" aria-hidden="true">♧</span> Bienvenue</h2><p>Je vous accompagne sur le chemin du bien-être,<br>à travers une approche spirituelle et énergétique.</p>
-      <div class="service-cards">
-        <a class="service-card" href="energeticien.html"><span class="service-symbol lotus-symbol">❀</span><span>Énergéticien</span></a>
-        <a class="service-card" href="magnetiseur.html"><span class="service-symbol yin-symbol">☯</span><span>Magnétiseur</span></a>
-        <a class="service-card" href="chakras.html"><span class="service-symbol chakra-symbol">♙</span><span>Chakras</span></a>
-        <a class="service-card" href="liberation.html"><span class="service-symbol spiral-symbol">◎</span><span>Libération<br>des blocages</span></a>
-      </div>
-      <div class="hero-extra-links"><a href="chaman.html">Chaman</a><a href="vente.html">Vente</a><a href="contact.html">Me contacter</a></div>
+  <div class="hero-scene-images" aria-hidden="true"><img class="scene-stones" data-reference-image="stones" alt=""><img class="scene-lotus" data-reference-image="lotus" alt=""></div>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <p class="hero-quote">« Un chemin vers la sérénité,<br>l’harmonie et la lumière intérieure »</p>
+      <div class="quote-underline"></div>
+      <p class="hero-description">Je vous accompagne dans votre cheminement spirituel<br>pour retrouver équilibre, énergie et bien-être.</p>
+      <a class="hero-learn" href="a-propos.html"><span aria-hidden="true">❀</span> En savoir plus　→</a>
     </div>
-    <div class="hero-quote"><p>Un chemin vers la sérénité,<br>l’harmonie et la lumière…</p></div>
+    <div class="hero-music-callout">
+      <p>Écoutez et découvrez<br>ma musique</p>
+      <button type="button" class="music-inline-open" onclick="document.getElementById('music-open').click()">♫　Mon Espace Musique　↗</button>
+    </div>
   </div>
-  <div class="contactbar"><a href="https://wa.me/33769737356">07 69 73 73 56 (WhatsApp uniquement)</a><a href="mailto:rodolphetorres@outlook.fr">rodolphetorres@outlook.fr</a></div>
-  <p class="closing">Découvrez un univers de bien-être et d’harmonie…</p>
+</section>
+<section class="service-section" aria-label="Mes accompagnements">
+  <a class="service-card" href="energeticien.html"><span class="service-icon">❀</span><span class="service-title">Énergéticien</span><span class="service-description">Retrouvez votre énergie</span></a>
+  <a class="service-card" href="magnetiseur.html"><span class="service-icon">♧</span><span class="service-title">Magnétiseur</span><span class="service-description">Harmonisez vos énergies</span></a>
+  <a class="service-card" href="chakras.html"><span class="service-icon">☯</span><span class="service-title">Chakras</span><span class="service-description">Équilibrez vos centres</span></a>
+  <a class="service-card" href="liberation.html"><span class="service-icon heart-icon">♡</span><span class="service-title">Libération des blocages</span><span class="service-description">Avancez sur votre chemin</span></a>
+  <a class="service-card service-extra" href="chaman.html"><span class="service-icon">☾</span><span class="service-title">Chaman</span></a>
+  <a class="service-card service-extra" href="vente.html"><span class="service-icon">✧</span><span class="service-title">Vente</span></a>
 </section>
 
 
 
 
-<!-- Lecteur musical en fenêtre pop-up -->
+<!-- Lecteur musical dans une fenêtre pop-up ouverte par l’icône flottante -->
 <button id="music-open" class="music-float" type="button" aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal"><span aria-hidden="true">♫</span></button>
 <div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
   <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
   <section class="music-modal-card">
     <header class="music-modal-head"><h2 id="music-modal-title"><span aria-hidden="true">♫</span> Mon Espace Musique</h2><button class="music-close" type="button" data-music-close aria-label="Fermer">×</button></header>
-    <div class="music-popup-intro"><img src="meditation-cover.svg" alt=""><p>Écoutez votre musique<br>en toute sérénité</p></div>
+    <p class="music-modal-subtitle">Écoutez et découvrez ma musique</p>
+    <div class="music-track-preview"><img data-reference-image="album" alt="Illustration de sérénité intérieure"><div><h3>Sérénité Intérieure</h3><p>Rodolphe Torres Tirado</p><div class="track-line"><span></span></div><div class="track-time"><span>00:00</span><span>04:32</span></div></div></div>
     <iframe class="music-modal-frame" src="https://mon-espace-musique.rodolphetorres.workers.dev/" title="Mon Espace Musique" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write"></iframe>
-    <div class="music-modal-slogan">Un moment de paix… tout simplement <span aria-hidden="true">♧</span></div>
-    <div class="music-modal-footer"><button class="music-modal-link" type="button" data-music-close>×　Fermer</button></div>
+    <div class="music-modal-footer"><a class="music-modal-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">♧　Ouvrir Mon Espace Musique ↗</a></div>
   </section>
 </div>
 
@@ -128,6 +136,9 @@
 
 <script>
 (function(){var modal=document.getElementById('music-modal'),open=document.getElementById('music-open'),closeButtons=modal.querySelectorAll('[data-music-close]'),lastFocus=null;function show(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();}function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');open.setAttribute('aria-expanded','false');if(lastFocus)lastFocus.focus();}open.addEventListener('click',show);closeButtons.forEach(function(b){b.addEventListener('click',hide);});document.addEventListener('keydown',function(e){if(!modal.hidden&&e.key==='Escape')hide();});})();
+</script>
+<script>
+(function(){const assets={brand:'assets/reference-logo.b64',lotus:'assets/reference-lotus.b64',stones:'assets/reference-stones.b64',album:'assets/reference-album.b64'};Object.keys(assets).forEach(function(key){fetch(assets[key]).then(function(r){if(!r.ok)throw Error('image asset');return r.text()}).then(function(data){document.querySelectorAll('[data-reference-image="'+key+'"]').forEach(function(el){el.src='data:image/webp;base64,'+data.trim()})}).catch(function(){})})})();
 </script>
 <script src="app.js"></script>
 <script src="pastel-theme.js"></script></body>
