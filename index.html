@@ -325,6 +325,7 @@ body{background:#e8f4ff;color:#143d78}
     <a href="a-propos.html">À propos</a>
     <a href="temoignages.html">Témoignages</a>
     <a href="contact.html">Contact</a>
+    <a href="#music-modal" id="music-open" aria-haspopup="dialog" aria-controls="music-modal" aria-expanded="false">♫ Mon Espace Musique</a>
   </nav>
 
   <main>
@@ -341,29 +342,7 @@ body{background:#e8f4ff;color:#143d78}
           <a class="hero-learn" href="a-propos.html"><span aria-hidden="true">❀</span> En savoir plus <span aria-hidden="true">→</span></a>
         </div>
 
-        <section class="hero-player" aria-label="Découvrir ma musique">
-          <div class="hero-player-head">
-            <span class="hero-player-note" aria-hidden="true">♫</span>
-            <h2>Mon Espace Musique</h2>
-            <button class="hero-player-close" type="button" aria-label="Ouvrir le lecteur musical" onclick="showMusic()">↗</button>
-          </div>
-          <p class="hero-player-subtitle">Écoutez et découvrez ma musique</p>
-          <div class="hero-player-track">
-            <img data-reference-image="album" alt="Illustration musicale">
-            <div class="hero-player-details">
-              <h3>Rodolphe Torres Tirado</h3>
-              <p>Mes créations musicales</p>
-              <div class="hero-player-progress" aria-hidden="true"><span></span></div>
-              <div class="hero-player-time"><span>Mon univers musical</span><span>♫</span></div>
-              <div class="hero-player-controls">
-                <button type="button" aria-label="Ouvrir Mon Espace Musique" onclick="showMusic()">‹</button>
-                <button class="hero-player-play" type="button" aria-label="Ouvrir Mon Espace Musique" onclick="showMusic()">▶</button>
-                <button type="button" aria-label="Ouvrir Mon Espace Musique" onclick="showMusic()">›</button>
-              </div>
-            </div>
-          </div>
-          <a class="hero-player-link" href="https://mon-espace-musique.rodolphetorres.workers.dev/" target="_blank" rel="noopener noreferrer">Ouvrir Mon Espace Musique ↗</a>
-        </section>
+
       </div>
     </section>
 
@@ -392,7 +371,6 @@ body{background:#e8f4ff;color:#143d78}
     </section>
   </main>
 
-  <button id="music-open" class="music-float" type="button" aria-label="Ouvrir Mon Espace Musique" aria-haspopup="dialog" aria-controls="music-modal" aria-expanded="false">♫</button>
   <div id="music-modal" class="music-modal" role="dialog" aria-modal="true" aria-labelledby="music-modal-title" hidden>
     <button class="music-backdrop" type="button" data-music-close aria-label="Fermer la fenêtre musicale"></button>
     <section class="music-modal-card">
@@ -416,9 +394,9 @@ body{background:#e8f4ff;color:#143d78}
       var modal=document.getElementById('music-modal');
       var open=document.getElementById('music-open');
       var lastFocus=null;
-      window.showMusic=function(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();};
-      function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');open.setAttribute('aria-expanded','false');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
-      open.addEventListener('click',window.showMusic);
+      window.showMusic=function(){lastFocus=document.activeElement;modal.hidden=false;document.body.classList.add('music-modal-open');if(open)open.setAttribute('aria-expanded','true');modal.querySelector('.music-close').focus();};
+      function hide(){modal.hidden=true;document.body.classList.remove('music-modal-open');if(open)open.setAttribute('aria-expanded','false');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+      if(open)open.addEventListener('click',function(event){event.preventDefault();window.showMusic();});
       modal.querySelectorAll('[data-music-close]').forEach(function(button){button.addEventListener('click',hide);});
       document.addEventListener('keydown',function(event){if(!modal.hidden&&event.key==='Escape')hide();});
     })();
